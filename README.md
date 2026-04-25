@@ -1,4 +1,4 @@
-# BiliPoliticalCommentsResercher (BPCR)
+# BiliPoliticalCommentsResearcher (BPCR)
 
 BiliPoliticalCommentsResercher，简称 BPCR，是一个面向社会科学研究的本地数据工具，用于在合规、低频、可复核的前提下，对 Bilibili 古风 / 古风 DJ 歌曲相关视频评论进行采集、匿名化清洗、词频统计、政治历史隐喻识别、四轴坐标分析、立场分类和跨歌曲汇总报告生成。
 
