@@ -1,0 +1,2685 @@
+{
+  "include_terms": [
+    {
+      "term": "人民万岁",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东时代政治标语",
+      "weight": 3.5,
+      "reason": "开国与毛泽东政治标语语境"
+    },
+    {
+      "term": "同志们万岁",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东时代政治标语",
+      "weight": 3.3,
+      "reason": "开国政治标语语境"
+    },
+    {
+      "term": "中国人民大团结万岁",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东时代政治标语",
+      "weight": 3.5,
+      "reason": "毛泽东政治文本与标语"
+    },
+    {
+      "term": "世界人民大团结万岁",
+      "semantic_category": "政治路线",
+      "meaning_label": "国际主义与人民团结标语",
+      "weight": 3.6,
+      "reason": "天安门标语与毛时代国际主义叙事"
+    },
+    {
+      "term": "全世界人民大团结万岁",
+      "semantic_category": "政治路线",
+      "meaning_label": "国际主义与人民团结标语",
+      "weight": 3.6,
+      "reason": "世界人民团结标语变体"
+    },
+    {
+      "term": "全世界无产者联合起来",
+      "semantic_category": "政治路线",
+      "meaning_label": "国际主义与人民团结标语",
+      "weight": 3.6,
+      "reason": "左翼国际主义标语"
+    },
+    {
+      "term": "无产者联合起来",
+      "semantic_category": "政治路线",
+      "meaning_label": "国际主义与人民团结标语",
+      "weight": 3.4,
+      "reason": "左翼国际主义标语简称"
+    },
+    {
+      "term": "联合起来",
+      "semantic_category": "政治路线",
+      "meaning_label": "群众联合与政治动员",
+      "weight": 2.8,
+      "reason": "左翼/群众动员口号，需结合语境"
+    },
+    {
+      "term": "组织起来",
+      "semantic_category": "政治路线",
+      "meaning_label": "群众联合与政治动员",
+      "weight": 3.0,
+      "reason": "毛泽东群众组织动员语境"
+    },
+    {
+      "term": "人民群众",
+      "semantic_category": "政治路线",
+      "meaning_label": "群众路线",
+      "weight": 2.8,
+      "reason": "群众路线与人民政治话语"
+    },
+    {
+      "term": "群众路线",
+      "semantic_category": "政治路线",
+      "meaning_label": "群众路线",
+      "weight": 3.2,
+      "reason": "中共群众路线术语"
+    },
+    {
+      "term": "为人民服务",
+      "semantic_category": "政治路线",
+      "meaning_label": "群众路线",
+      "weight": 3.2,
+      "reason": "毛泽东时代政治伦理标语"
+    },
+    {
+      "term": "人民公仆",
+      "semantic_category": "政治路线",
+      "meaning_label": "群众路线",
+      "weight": 2.8,
+      "reason": "群众路线治理伦理"
+    },
+    {
+      "term": "人民战争",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东军事政治叙事",
+      "weight": 3.1,
+      "reason": "毛泽东军事政治话语"
+    },
+    {
+      "term": "农村包围城市",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东军事政治叙事",
+      "weight": 3.2,
+      "reason": "毛泽东革命路线"
+    },
+    {
+      "term": "枪杆子里面出政权",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东军事政治叙事",
+      "weight": 3.4,
+      "reason": "毛泽东革命路线名句"
+    },
+    {
+      "term": "四海翻腾云水怒",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 3.7,
+      "reason": "毛泽东诗词《满江红·和郭沫若同志》"
+    },
+    {
+      "term": "五洲震荡风雷激",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 3.7,
+      "reason": "毛泽东诗词《满江红·和郭沫若同志》"
+    },
+    {
+      "term": "四海五洲",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 3.8,
+      "reason": "《四海五洲》标题与歌词拆用毛泽东《满江红·和郭沫若同志》意象"
+    },
+    {
+      "term": "四海和五洲",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 3.9,
+      "reason": "歌词“囿于四海和五洲之内”拆用“四海/五洲”诗词结构"
+    },
+    {
+      "term": "囿于四海和五洲",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 4.0,
+      "reason": "《四海五洲》歌词直接触发毛泽东诗词互文"
+    },
+    {
+      "term": "五洲",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 3.0,
+      "reason": "与四海、风雷、翻腾共现时指向《满江红·和郭沫若同志》"
+    },
+    {
+      "term": "四海翻腾",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 3.4,
+      "reason": "毛泽东诗词片段变体"
+    },
+    {
+      "term": "五洲震荡",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 3.4,
+      "reason": "毛泽东诗词片段变体"
+    },
+    {
+      "term": "云水怒",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 3.2,
+      "reason": "毛泽东诗词片段"
+    },
+    {
+      "term": "风雷激",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 3.2,
+      "reason": "毛泽东诗词片段"
+    },
+    {
+      "term": "翻腾的风雷",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 3.6,
+      "reason": "《四海五洲》歌词将“四海翻腾/五洲震荡风雷激”重组为“翻腾的风雷”"
+    },
+    {
+      "term": "翻腾风雷",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 3.4,
+      "reason": "毛泽东诗词变体压缩表达"
+    },
+    {
+      "term": "风雷",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 2.7,
+      "reason": "与四海、五洲、翻腾共现时作为毛泽东诗词线索"
+    },
+    {
+      "term": "克里姆林宫的花",
+      "semantic_category": "政治路线",
+      "meaning_label": "社会主义阵营与苏联意象",
+      "weight": 3.0,
+      "reason": "《四海五洲》歌词中的苏联/国际共运意象"
+    },
+    {
+      "term": "褪色的口号",
+      "semantic_category": "政治路线",
+      "meaning_label": "政治标语记忆",
+      "weight": 2.8,
+      "reason": "《四海五洲》歌词中对政治口号残影的表达"
+    },
+    {
+      "term": "文娱汇演集体活动",
+      "semantic_category": "政治路线",
+      "meaning_label": "群众文艺与集体动员",
+      "weight": 3.0,
+      "reason": "《四海五洲》歌词中具有单位/集体活动时代感的表达"
+    },
+    {
+      "term": "萧瑟秋风今又是",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 3.5,
+      "reason": "毛泽东诗词《浪淘沙·北戴河》"
+    },
+    {
+      "term": "换了人间",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 3.6,
+      "reason": "毛泽东诗词中的新社会叙事"
+    },
+    {
+      "term": "天若有情天亦老",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 3.3,
+      "reason": "毛泽东诗词常用政治引用"
+    },
+    {
+      "term": "人间正道是沧桑",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 3.4,
+      "reason": "毛泽东诗词革命历史叙事"
+    },
+    {
+      "term": "雄关漫道真如铁",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 3.2,
+      "reason": "毛泽东诗词《忆秦娥·娄山关》"
+    },
+    {
+      "term": "而今迈步从头越",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 3.2,
+      "reason": "毛泽东诗词《忆秦娥·娄山关》"
+    },
+    {
+      "term": "苍山如海",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 2.8,
+      "reason": "毛泽东诗词片段，低权重防误判"
+    },
+    {
+      "term": "残阳如血",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 2.8,
+      "reason": "毛泽东诗词片段，低权重防误判"
+    },
+    {
+      "term": "问苍茫大地",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 3.0,
+      "reason": "毛泽东诗词《沁园春·长沙》"
+    },
+    {
+      "term": "谁主沉浮",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 3.1,
+      "reason": "毛泽东诗词政治主体性表达"
+    },
+    {
+      "term": "风华正茂",
+      "semantic_category": "政治路线",
+      "meaning_label": "青年革命主体叙事",
+      "weight": 2.8,
+      "reason": "毛泽东诗词青年政治主体性，需结合语境"
+    },
+    {
+      "term": "挥斥方遒",
+      "semantic_category": "政治路线",
+      "meaning_label": "青年革命主体叙事",
+      "weight": 3.0,
+      "reason": "毛泽东诗词青年政治主体性"
+    },
+    {
+      "term": "指点江山",
+      "semantic_category": "政治路线",
+      "meaning_label": "青年革命主体叙事",
+      "weight": 2.7,
+      "reason": "毛泽东诗词片段，需结合语境"
+    },
+    {
+      "term": "激扬文字",
+      "semantic_category": "政治路线",
+      "meaning_label": "青年革命主体叙事",
+      "weight": 2.7,
+      "reason": "毛泽东诗词片段，需结合语境"
+    },
+    {
+      "term": "粪土当年万户侯",
+      "semantic_category": "政治路线",
+      "meaning_label": "青年革命主体叙事",
+      "weight": 3.1,
+      "reason": "毛泽东诗词反权贵表达"
+    },
+    {
+      "term": "数风流人物",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 3.0,
+      "reason": "毛泽东诗词《沁园春·雪》"
+    },
+    {
+      "term": "还看今朝",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 3.0,
+      "reason": "毛泽东诗词新政权叙事"
+    },
+    {
+      "term": "俱往矣",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 2.8,
+      "reason": "毛泽东诗词历史更替语境"
+    },
+    {
+      "term": "一唱雄鸡天下白",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 3.4,
+      "reason": "毛泽东诗词新中国叙事"
+    },
+    {
+      "term": "六亿神州尽舜尧",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 3.4,
+      "reason": "毛泽东诗词人民主体叙事"
+    },
+    {
+      "term": "喜看稻菽千重浪",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 3.1,
+      "reason": "毛泽东诗词农业/人民叙事"
+    },
+    {
+      "term": "遍地英雄下夕烟",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 3.1,
+      "reason": "毛泽东诗词人民英雄叙事"
+    },
+    {
+      "term": "不到长城非好汉",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 2.9,
+      "reason": "毛泽东诗词革命意志表达"
+    },
+    {
+      "term": "红旗漫卷西风",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 3.1,
+      "reason": "毛泽东诗词革命符号"
+    },
+    {
+      "term": "战地黄花分外香",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 2.9,
+      "reason": "毛泽东诗词战争/革命意象"
+    },
+    {
+      "term": "1984",
+      "semantic_category": "制度治理",
+      "meaning_label": "奥威尔式威权批判",
+      "weight": 3.4,
+      "reason": "乔治·奥威尔《一九八四》政治隐喻"
+    },
+    {
+      "term": "一九八四",
+      "semantic_category": "制度治理",
+      "meaning_label": "奥威尔式威权批判",
+      "weight": 3.4,
+      "reason": "乔治·奥威尔《一九八四》中文写法"
+    },
+    {
+      "term": "大洋国",
+      "semantic_category": "制度治理",
+      "meaning_label": "奥威尔式威权批判",
+      "weight": 3.5,
+      "reason": "《一九八四》国家设定"
+    },
+    {
+      "term": "真理部",
+      "semantic_category": "制度治理",
+      "meaning_label": "奥威尔式威权批判",
+      "weight": 3.6,
+      "reason": "《一九八四》机构设定"
+    },
+    {
+      "term": "老大哥",
+      "semantic_category": "制度治理",
+      "meaning_label": "奥威尔式威权批判",
+      "weight": 3.3,
+      "reason": "《一九八四》监控权力符号"
+    },
+    {
+      "term": "电幕",
+      "semantic_category": "制度治理",
+      "meaning_label": "奥威尔式威权批判",
+      "weight": 3.1,
+      "reason": "《一九八四》监控装置"
+    },
+    {
+      "term": "思想警察",
+      "semantic_category": "制度治理",
+      "meaning_label": "奥威尔式威权批判",
+      "weight": 3.5,
+      "reason": "《一九八四》政治监控设定"
+    },
+    {
+      "term": "双重思想",
+      "semantic_category": "制度治理",
+      "meaning_label": "奥威尔式威权批判",
+      "weight": 3.3,
+      "reason": "《一九八四》政治语言概念"
+    },
+    {
+      "term": "新话",
+      "semantic_category": "制度治理",
+      "meaning_label": "奥威尔式威权批判",
+      "weight": 3.1,
+      "reason": "《一九八四》政治语言概念"
+    },
+    {
+      "term": "战争即和平",
+      "semantic_category": "制度治理",
+      "meaning_label": "奥威尔式威权批判",
+      "weight": 3.5,
+      "reason": "《一九八四》英社口号"
+    },
+    {
+      "term": "自由即奴役",
+      "semantic_category": "制度治理",
+      "meaning_label": "奥威尔式威权批判",
+      "weight": 3.5,
+      "reason": "《一九八四》英社口号"
+    },
+    {
+      "term": "无知即力量",
+      "semantic_category": "制度治理",
+      "meaning_label": "奥威尔式威权批判",
+      "weight": 3.5,
+      "reason": "《一九八四》英社口号"
+    },
+    {
+      "term": "奥威尔",
+      "semantic_category": "制度治理",
+      "meaning_label": "奥威尔式威权批判",
+      "weight": 3.0,
+      "reason": "奥威尔政治寓言引用"
+    },
+    {
+      "term": "奥威尔式",
+      "semantic_category": "制度治理",
+      "meaning_label": "奥威尔式威权批判",
+      "weight": 3.3,
+      "reason": "奥威尔政治寓言引用"
+    },
+    {
+      "term": "满清",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "皇汉民族主义",
+      "weight": 3.2,
+      "reason": "皇汉/反满清叙事常见词"
+    },
+    {
+      "term": "鞑清",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "皇汉民族主义",
+      "weight": 3.4,
+      "reason": "皇汉/反满清叙事贬称"
+    },
+    {
+      "term": "清妖",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "皇汉民族主义",
+      "weight": 3.4,
+      "reason": "皇汉/反满清叙事贬称"
+    },
+    {
+      "term": "大明",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "皇汉民族主义",
+      "weight": 3.0,
+      "reason": "明朝正统/皇汉叙事线索"
+    },
+    {
+      "term": "明粉",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "皇汉民族主义",
+      "weight": 3.0,
+      "reason": "明朝认同/皇汉语境"
+    },
+    {
+      "term": "反清复明",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "皇汉民族主义",
+      "weight": 3.5,
+      "reason": "反满清/明朝复兴叙事"
+    },
+    {
+      "term": "驱除鞑虏",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "皇汉民族主义",
+      "weight": 3.5,
+      "reason": "民族革命/皇汉常用语"
+    },
+    {
+      "term": "恢复中华",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "皇汉民族主义",
+      "weight": 3.4,
+      "reason": "民族革命/皇汉常用语"
+    },
+    {
+      "term": "朱元璋",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "皇汉民族主义",
+      "weight": 3.2,
+      "reason": "明太祖/驱元建明叙事"
+    },
+    {
+      "term": "洪武",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "皇汉民族主义",
+      "weight": 2.8,
+      "reason": "朱元璋年号/明朝叙事"
+    },
+    {
+      "term": "明太祖",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "皇汉民族主义",
+      "weight": 3.0,
+      "reason": "朱元璋称谓"
+    },
+    {
+      "term": "孙殿英",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "反满清与皇汉叙事",
+      "weight": 3.0,
+      "reason": "盗掘清东陵在网络皇汉语境中可能被符号化"
+    },
+    {
+      "term": "东陵",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "反满清与皇汉叙事",
+      "weight": 2.5,
+      "reason": "孙殿英/清东陵语境，需结合评论"
+    },
+    {
+      "term": "清东陵",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "反满清与皇汉叙事",
+      "weight": 2.8,
+      "reason": "孙殿英/清东陵语境"
+    },
+    {
+      "term": "华夷之辨",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "皇汉民族主义",
+      "weight": 3.3,
+      "reason": "皇汉/文明边界叙事"
+    },
+    {
+      "term": "剃发易服",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "反满清与皇汉叙事",
+      "weight": 3.2,
+      "reason": "明清易代民族文化创伤叙事"
+    },
+    {
+      "term": "扬州十日",
+      "semantic_category": "历史事件",
+      "meaning_label": "明清易代创伤叙事",
+      "weight": 3.1,
+      "reason": "明清易代历史创伤叙事"
+    },
+    {
+      "term": "嘉定三屠",
+      "semantic_category": "历史事件",
+      "meaning_label": "明清易代创伤叙事",
+      "weight": 3.1,
+      "reason": "明清易代历史创伤叙事"
+    },
+    {
+      "term": "大国",
+      "semantic_category": "政治路线",
+      "meaning_label": "建制发展主义",
+      "weight": 2.7,
+      "reason": "大国叙事/建制派线索"
+    },
+    {
+      "term": "大国崛起",
+      "semantic_category": "政治路线",
+      "meaning_label": "建制发展主义",
+      "weight": 3.2,
+      "reason": "大国崛起叙事"
+    },
+    {
+      "term": "中国制造",
+      "semantic_category": "政治路线",
+      "meaning_label": "建制发展主义",
+      "weight": 3.1,
+      "reason": "制造强国/工业发展叙事"
+    },
+    {
+      "term": "中国制造2025",
+      "semantic_category": "政治路线",
+      "meaning_label": "建制发展主义",
+      "weight": 3.3,
+      "reason": "产业政策/制造强国叙事"
+    },
+    {
+      "term": "制造强国",
+      "semantic_category": "政治路线",
+      "meaning_label": "建制发展主义",
+      "weight": 3.2,
+      "reason": "产业强国叙事"
+    },
+    {
+      "term": "科技强国",
+      "semantic_category": "政治路线",
+      "meaning_label": "建制发展主义",
+      "weight": 3.0,
+      "reason": "国家发展叙事"
+    },
+    {
+      "term": "进步",
+      "semantic_category": "政治路线",
+      "meaning_label": "建制进步叙事",
+      "weight": 2.7,
+      "reason": "在用户定义中归建制派，需与语境联动"
+    },
+    {
+      "term": "发展才是硬道理",
+      "semantic_category": "政治路线",
+      "meaning_label": "改革开放与发展主义",
+      "weight": 3.4,
+      "reason": "邓小平发展主义政治话语"
+    },
+    {
+      "term": "摸着石头过河",
+      "semantic_category": "政治路线",
+      "meaning_label": "改革开放与发展主义",
+      "weight": 3.2,
+      "reason": "改革开放方法论"
+    },
+    {
+      "term": "黑猫白猫",
+      "semantic_category": "政治路线",
+      "meaning_label": "改革开放与发展主义",
+      "weight": 3.2,
+      "reason": "邓小平实用主义改革话语"
+    },
+    {
+      "term": "先富带后富",
+      "semantic_category": "政治路线",
+      "meaning_label": "改革开放与发展主义",
+      "weight": 3.1,
+      "reason": "邓小平改革话语"
+    },
+    {
+      "term": "王洪文",
+      "semantic_category": "历史事件",
+      "meaning_label": "王洪文与文革派",
+      "weight": 3.6,
+      "reason": "四人帮成员，文革派重点人物"
+    },
+    {
+      "term": "王副主席",
+      "semantic_category": "历史事件",
+      "meaning_label": "王洪文与文革派",
+      "weight": 3.4,
+      "reason": "王洪文职务代称"
+    },
+    {
+      "term": "小王",
+      "semantic_category": "历史事件",
+      "meaning_label": "王洪文隐晦指代",
+      "weight": 3.0,
+      "reason": "项目人工规则：疑似王洪文代称，需重点复核"
+    },
+    {
+      "term": "年轻人",
+      "semantic_category": "历史事件",
+      "meaning_label": "王洪文隐晦指代",
+      "weight": 2.6,
+      "reason": "项目人工规则：可能指王洪文年轻接班人形象，需重点复核"
+    },
+    {
+      "term": "小崔",
+      "semantic_category": "历史事件",
+      "meaning_label": "王洪文隐晦指代",
+      "weight": 3.1,
+      "reason": "项目人工规则：用户指定需重点关注，存在崔永元等歧义"
+    },
+    {
+      "term": "四人帮",
+      "semantic_category": "历史事件",
+      "meaning_label": "四人帮与文革派",
+      "weight": 3.5,
+      "reason": "王洪文、张春桥、江青、姚文元政治集团"
+    },
+    {
+      "term": "王张江姚",
+      "semantic_category": "历史事件",
+      "meaning_label": "四人帮与文革派",
+      "weight": 3.5,
+      "reason": "四人帮成员简称"
+    },
+    {
+      "term": "张春桥",
+      "semantic_category": "历史事件",
+      "meaning_label": "四人帮与文革派",
+      "weight": 3.2,
+      "reason": "四人帮成员"
+    },
+    {
+      "term": "江青",
+      "semantic_category": "历史事件",
+      "meaning_label": "四人帮与文革派",
+      "weight": 3.2,
+      "reason": "四人帮成员"
+    },
+    {
+      "term": "姚文元",
+      "semantic_category": "历史事件",
+      "meaning_label": "四人帮与文革派",
+      "weight": 3.2,
+      "reason": "四人帮成员"
+    },
+    {
+      "term": "上海公社",
+      "semantic_category": "历史事件",
+      "meaning_label": "文革造反派与上海公社",
+      "weight": 3.3,
+      "reason": "文革造反派与王洪文相关语境"
+    },
+    {
+      "term": "一月风暴",
+      "semantic_category": "历史事件",
+      "meaning_label": "文革造反派与上海公社",
+      "weight": 3.2,
+      "reason": "上海文革夺权事件"
+    },
+    {
+      "term": "接班人",
+      "semantic_category": "制度治理",
+      "meaning_label": "接班人政治",
+      "weight": 2.6,
+      "reason": "可能指王洪文/林彪/华国锋等接班人叙事"
+    },
+    {
+      "term": "毛泽东",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东与毛主义",
+      "weight": 3.6,
+      "reason": "毛泽东本人/毛主义核心"
+    },
+    {
+      "term": "毛主席",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东与毛主义",
+      "weight": 3.5,
+      "reason": "毛泽东称谓"
+    },
+    {
+      "term": "教员",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东隐晦指代",
+      "weight": 3.5,
+      "reason": "中文互联网中常见毛泽东代称"
+    },
+    {
+      "term": "导师",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东隐晦指代",
+      "weight": 3.2,
+      "reason": "毛泽东/革命导师称谓，需结合语境"
+    },
+    {
+      "term": "毛",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东隐晦指代",
+      "weight": 2.8,
+      "reason": "毛泽东简称，高歧义需复核"
+    },
+    {
+      "term": "猫",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东隐晦指代",
+      "weight": 2.6,
+      "reason": "谐音代称，高歧义需复核"
+    },
+    {
+      "term": "腊肉",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东隐晦指代",
+      "weight": 3.2,
+      "reason": "中文互联网对毛泽东的黑话称呼"
+    },
+    {
+      "term": "红太阳",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东隐晦指代",
+      "weight": 3.3,
+      "reason": "毛泽东崇拜符号"
+    },
+    {
+      "term": "伟大领袖",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东隐晦指代",
+      "weight": 2.9,
+      "reason": "毛时代领袖称谓，需结合语境"
+    },
+    {
+      "term": "伟大导师",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东隐晦指代",
+      "weight": 3.0,
+      "reason": "毛时代领袖称谓"
+    },
+    {
+      "term": "老人家",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东隐晦指代",
+      "weight": 2.6,
+      "reason": "可能指毛泽东/邓小平等，需复核"
+    },
+    {
+      "term": "太祖",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东隐晦指代",
+      "weight": 3.1,
+      "reason": "中文互联网常用开国领袖代称，也可能指朱元璋等"
+    },
+    {
+      "term": "邓小平",
+      "semantic_category": "历史事件",
+      "meaning_label": "邓小平与改革开放",
+      "weight": 3.5,
+      "reason": "改革开放核心人物"
+    },
+    {
+      "term": "邓公",
+      "semantic_category": "历史事件",
+      "meaning_label": "邓小平与改革开放",
+      "weight": 3.3,
+      "reason": "邓小平尊称"
+    },
+    {
+      "term": "稻上飞",
+      "semantic_category": "历史事件",
+      "meaning_label": "邓小平隐晦指代",
+      "weight": 3.0,
+      "reason": "中文互联网谐音代称，需复核"
+    },
+    {
+      "term": "稻",
+      "semantic_category": "历史事件",
+      "meaning_label": "邓小平隐晦指代",
+      "weight": 2.4,
+      "reason": "邓小平谐音简称，高歧义需复核"
+    },
+    {
+      "term": "司马懿",
+      "semantic_category": "历史事件",
+      "meaning_label": "邓小平隐晦指代",
+      "weight": 3.0,
+      "reason": "用户指定：以司马懿隐喻邓小平，需复核"
+    },
+    {
+      "term": "想得开",
+      "semantic_category": "历史事件",
+      "meaning_label": "邓小平隐晦指代",
+      "weight": 3.1,
+      "reason": "用户指定：邓小平隐晦指代"
+    },
+    {
+      "term": "挺得住",
+      "semantic_category": "历史事件",
+      "meaning_label": "邓小平隐晦指代",
+      "weight": 3.1,
+      "reason": "用户指定：邓小平隐晦指代"
+    },
+    {
+      "term": "矮子",
+      "semantic_category": "历史事件",
+      "meaning_label": "邓小平隐晦指代",
+      "weight": 2.8,
+      "reason": "邓小平外貌代称，需复核"
+    },
+    {
+      "term": "二代核心",
+      "semantic_category": "历史事件",
+      "meaning_label": "邓小平与改革开放",
+      "weight": 3.0,
+      "reason": "邓小平政治身份代称"
+    },
+    {
+      "term": "香草美人",
+      "semantic_category": "政治路线",
+      "meaning_label": "古典文学政治寄托",
+      "weight": 3.0,
+      "reason": "古典诗学中借美人香草寄托政治情感"
+    },
+    {
+      "term": "美人香草",
+      "semantic_category": "政治路线",
+      "meaning_label": "古典文学政治寄托",
+      "weight": 3.0,
+      "reason": "香草美人变体"
+    },
+    {
+      "term": "屈原",
+      "semantic_category": "政治路线",
+      "meaning_label": "古典文学政治寄托",
+      "weight": 2.8,
+      "reason": "忠君爱国/政治放逐文学传统"
+    },
+    {
+      "term": "离骚",
+      "semantic_category": "政治路线",
+      "meaning_label": "古典文学政治寄托",
+      "weight": 2.8,
+      "reason": "香草美人传统文本"
+    },
+    {
+      "term": "楚辞",
+      "semantic_category": "政治路线",
+      "meaning_label": "古典文学政治寄托",
+      "weight": 2.5,
+      "reason": "政治抒情传统线索"
+    },
+    {
+      "term": "芳草",
+      "semantic_category": "政治路线",
+      "meaning_label": "古典文学政治寄托",
+      "weight": 2.2,
+      "reason": "香草美人意象，需结合语境"
+    },
+    {
+      "term": "美人迟暮",
+      "semantic_category": "政治路线",
+      "meaning_label": "古典文学政治寄托",
+      "weight": 2.6,
+      "reason": "古典政治抒情意象"
+    },
+    {
+      "term": "改革开放",
+      "semantic_category": "历史事件",
+      "meaning_label": "改革开放",
+      "weight": 3.4,
+      "reason": "1978以来经济与制度转型主标签"
+    },
+    {
+      "term": "改开",
+      "semantic_category": "历史事件",
+      "meaning_label": "改革开放",
+      "weight": 3.2,
+      "reason": "改革开放简称"
+    },
+    {
+      "term": "南巡",
+      "semantic_category": "历史事件",
+      "meaning_label": "改革开放",
+      "weight": 3.1,
+      "reason": "1992南方谈话语境"
+    },
+    {
+      "term": "深圳",
+      "semantic_category": "历史事件",
+      "meaning_label": "改革开放",
+      "weight": 2.7,
+      "reason": "经济特区与改开象征"
+    },
+    {
+      "term": "经济特区",
+      "semantic_category": "历史事件",
+      "meaning_label": "改革开放",
+      "weight": 3.1,
+      "reason": "改开制度实践"
+    },
+    {
+      "term": "市场化",
+      "semantic_category": "政治路线",
+      "meaning_label": "市场化改革",
+      "weight": 3.1,
+      "reason": "改革路径与经济路线"
+    },
+    {
+      "term": "私有化",
+      "semantic_category": "政治路线",
+      "meaning_label": "市场化改革",
+      "weight": 3.0,
+      "reason": "市场化改革争议词"
+    },
+    {
+      "term": "下海",
+      "semantic_category": "历史事件",
+      "meaning_label": "改革开放",
+      "weight": 2.6,
+      "reason": "改开后商业化叙事"
+    },
+    {
+      "term": "走资",
+      "semantic_category": "政治路线",
+      "meaning_label": "市场化改革争议",
+      "weight": 3.2,
+      "reason": "左翼批评市场化的常见词"
+    },
+    {
+      "term": "走资派",
+      "semantic_category": "政治路线",
+      "meaning_label": "市场化改革争议",
+      "weight": 3.3,
+      "reason": "文革与改革争议语汇"
+    },
+    {
+      "term": "文革",
+      "semantic_category": "历史事件",
+      "meaning_label": "文化大革命",
+      "weight": 3.6,
+      "reason": "文化大革命简称"
+    },
+    {
+      "term": "文化大革命",
+      "semantic_category": "历史事件",
+      "meaning_label": "文化大革命",
+      "weight": 3.6,
+      "reason": "历史事件主标签"
+    },
+    {
+      "term": "红卫兵",
+      "semantic_category": "历史事件",
+      "meaning_label": "文化大革命",
+      "weight": 3.3,
+      "reason": "文革群体符号"
+    },
+    {
+      "term": "造反派",
+      "semantic_category": "历史事件",
+      "meaning_label": "文化大革命",
+      "weight": 3.2,
+      "reason": "文革政治派别符号"
+    },
+    {
+      "term": "批斗",
+      "semantic_category": "历史事件",
+      "meaning_label": "文化大革命",
+      "weight": 3.2,
+      "reason": "文革政治运动实践"
+    },
+    {
+      "term": "破四旧",
+      "semantic_category": "历史事件",
+      "meaning_label": "文化大革命",
+      "weight": 3.3,
+      "reason": "文革运动关键词"
+    },
+    {
+      "term": "上山下乡",
+      "semantic_category": "历史事件",
+      "meaning_label": "文化大革命",
+      "weight": 3.0,
+      "reason": "文革与知青叙事"
+    },
+    {
+      "term": "知青",
+      "semantic_category": "历史事件",
+      "meaning_label": "上山下乡",
+      "weight": 2.8,
+      "reason": "知青与下乡叙事"
+    },
+    {
+      "term": "大字报",
+      "semantic_category": "历史事件",
+      "meaning_label": "文化大革命",
+      "weight": 3.1,
+      "reason": "文革政治表达形式"
+    },
+    {
+      "term": "大鸣大放",
+      "semantic_category": "历史事件",
+      "meaning_label": "整风反右与文革政治表达",
+      "weight": 3.0,
+      "reason": "政治运动语汇"
+    },
+    {
+      "term": "阶级斗争",
+      "semantic_category": "政治路线",
+      "meaning_label": "阶级斗争叙事",
+      "weight": 3.4,
+      "reason": "左翼政治叙事核心词"
+    },
+    {
+      "term": "阶级敌人",
+      "semantic_category": "政治路线",
+      "meaning_label": "阶级斗争叙事",
+      "weight": 3.3,
+      "reason": "政治运动语汇"
+    },
+    {
+      "term": "路线斗争",
+      "semantic_category": "政治路线",
+      "meaning_label": "阶级斗争叙事",
+      "weight": 3.1,
+      "reason": "党内路线争议语汇"
+    },
+    {
+      "term": "群众运动",
+      "semantic_category": "政治路线",
+      "meaning_label": "群众动员",
+      "weight": 3.0,
+      "reason": "政治动员方式"
+    },
+    {
+      "term": "大跃进",
+      "semantic_category": "历史事件",
+      "meaning_label": "大跃进",
+      "weight": 3.4,
+      "reason": "历史事件主标签"
+    },
+    {
+      "term": "人民公社",
+      "semantic_category": "历史事件",
+      "meaning_label": "人民公社",
+      "weight": 3.3,
+      "reason": "集体化制度实践"
+    },
+    {
+      "term": "公社",
+      "semantic_category": "历史事件",
+      "meaning_label": "人民公社",
+      "weight": 2.9,
+      "reason": "人民公社简称/泛化"
+    },
+    {
+      "term": "三面红旗",
+      "semantic_category": "历史事件",
+      "meaning_label": "大跃进与人民公社",
+      "weight": 3.2,
+      "reason": "1950年代政治路线组合"
+    },
+    {
+      "term": "总路线",
+      "semantic_category": "政治路线",
+      "meaning_label": "社会主义建设路线",
+      "weight": 2.9,
+      "reason": "政治路线词"
+    },
+    {
+      "term": "反右",
+      "semantic_category": "历史事件",
+      "meaning_label": "反右运动",
+      "weight": 3.3,
+      "reason": "历史政治运动"
+    },
+    {
+      "term": "右派",
+      "semantic_category": "政治路线",
+      "meaning_label": "反右运动与左右标签",
+      "weight": 2.8,
+      "reason": "政治标签，需结合语境"
+    },
+    {
+      "term": "反右倾",
+      "semantic_category": "历史事件",
+      "meaning_label": "反右倾运动",
+      "weight": 3.1,
+      "reason": "1959后政治运动"
+    },
+    {
+      "term": "庐山会议",
+      "semantic_category": "历史事件",
+      "meaning_label": "庐山会议",
+      "weight": 3.2,
+      "reason": "大跃进后政治节点"
+    },
+    {
+      "term": "彭德怀",
+      "semantic_category": "历史事件",
+      "meaning_label": "庐山会议",
+      "weight": 2.6,
+      "reason": "历史人物与事件线索"
+    },
+    {
+      "term": "土改",
+      "semantic_category": "历史事件",
+      "meaning_label": "土地改革",
+      "weight": 3.1,
+      "reason": "土地改革简称"
+    },
+    {
+      "term": "土地改革",
+      "semantic_category": "历史事件",
+      "meaning_label": "土地改革",
+      "weight": 3.1,
+      "reason": "历史事件主标签"
+    },
+    {
+      "term": "地主",
+      "semantic_category": "阶层与经济秩序",
+      "meaning_label": "阶级与土地秩序",
+      "weight": 2.8,
+      "reason": "阶层/土地关系词"
+    },
+    {
+      "term": "贫下中农",
+      "semantic_category": "阶层与经济秩序",
+      "meaning_label": "阶级与土地秩序",
+      "weight": 3.0,
+      "reason": "阶级身份语汇"
+    },
+    {
+      "term": "公私合营",
+      "semantic_category": "历史事件",
+      "meaning_label": "社会主义改造",
+      "weight": 3.1,
+      "reason": "1950年代工商改造"
+    },
+    {
+      "term": "三反五反",
+      "semantic_category": "历史事件",
+      "meaning_label": "三反五反",
+      "weight": 3.0,
+      "reason": "建国初政治运动"
+    },
+    {
+      "term": "计划经济",
+      "semantic_category": "政治路线",
+      "meaning_label": "计划经济",
+      "weight": 3.2,
+      "reason": "经济制度路线"
+    },
+    {
+      "term": "统购统销",
+      "semantic_category": "制度治理",
+      "meaning_label": "计划经济治理",
+      "weight": 3.0,
+      "reason": "计划经济制度工具"
+    },
+    {
+      "term": "粮票",
+      "semantic_category": "制度治理",
+      "meaning_label": "计划经济治理",
+      "weight": 2.6,
+      "reason": "计划经济生活制度符号"
+    },
+    {
+      "term": "单位制",
+      "semantic_category": "制度治理",
+      "meaning_label": "单位制治理",
+      "weight": 3.0,
+      "reason": "计划时代社会治理结构"
+    },
+    {
+      "term": "辛亥",
+      "semantic_category": "历史事件",
+      "meaning_label": "辛亥革命",
+      "weight": 3.2,
+      "reason": "辛亥革命简称"
+    },
+    {
+      "term": "辛亥革命",
+      "semantic_category": "历史事件",
+      "meaning_label": "辛亥革命",
+      "weight": 3.3,
+      "reason": "帝制终结与共和叙事"
+    },
+    {
+      "term": "五四",
+      "semantic_category": "历史事件",
+      "meaning_label": "五四运动",
+      "weight": 3.1,
+      "reason": "启蒙与民族主义叙事"
+    },
+    {
+      "term": "五四运动",
+      "semantic_category": "历史事件",
+      "meaning_label": "五四运动",
+      "weight": 3.2,
+      "reason": "近代思想政治节点"
+    },
+    {
+      "term": "新文化运动",
+      "semantic_category": "历史事件",
+      "meaning_label": "新文化运动",
+      "weight": 3.1,
+      "reason": "启蒙与传统批判"
+    },
+    {
+      "term": "启蒙",
+      "semantic_category": "政治路线",
+      "meaning_label": "启蒙自由主义",
+      "weight": 2.9,
+      "reason": "现代政治思想词"
+    },
+    {
+      "term": "德先生",
+      "semantic_category": "政治路线",
+      "meaning_label": "启蒙自由主义",
+      "weight": 3.0,
+      "reason": "五四启蒙符号"
+    },
+    {
+      "term": "赛先生",
+      "semantic_category": "政治路线",
+      "meaning_label": "启蒙自由主义",
+      "weight": 3.0,
+      "reason": "五四启蒙符号"
+    },
+    {
+      "term": "北伐",
+      "semantic_category": "历史事件",
+      "meaning_label": "北伐战争",
+      "weight": 2.9,
+      "reason": "近代国家统一叙事"
+    },
+    {
+      "term": "抗战",
+      "semantic_category": "历史事件",
+      "meaning_label": "抗日战争",
+      "weight": 3.2,
+      "reason": "民族国家叙事核心事件"
+    },
+    {
+      "term": "抗日",
+      "semantic_category": "历史事件",
+      "meaning_label": "抗日战争",
+      "weight": 3.1,
+      "reason": "民族国家叙事核心事件"
+    },
+    {
+      "term": "解放战争",
+      "semantic_category": "历史事件",
+      "meaning_label": "解放战争",
+      "weight": 3.1,
+      "reason": "近现代政权更替事件"
+    },
+    {
+      "term": "内战",
+      "semantic_category": "历史事件",
+      "meaning_label": "国共内战",
+      "weight": 2.9,
+      "reason": "国共内战语境"
+    },
+    {
+      "term": "民国",
+      "semantic_category": "历史事件",
+      "meaning_label": "晚清民国转型",
+      "weight": 2.7,
+      "reason": "近现代制度转型时代词"
+    },
+    {
+      "term": "晚清",
+      "semantic_category": "历史事件",
+      "meaning_label": "晚清民国转型",
+      "weight": 2.8,
+      "reason": "近现代转型时代词"
+    },
+    {
+      "term": "洋务",
+      "semantic_category": "历史事件",
+      "meaning_label": "晚清自强改革",
+      "weight": 2.9,
+      "reason": "洋务运动语境"
+    },
+    {
+      "term": "维新",
+      "semantic_category": "历史事件",
+      "meaning_label": "戊戌维新",
+      "weight": 2.9,
+      "reason": "维新变法语境"
+    },
+    {
+      "term": "变法",
+      "semantic_category": "革命与改革",
+      "meaning_label": "制度改革",
+      "weight": 2.9,
+      "reason": "古今制度改革通用词"
+    },
+    {
+      "term": "中央集权",
+      "semantic_category": "制度治理",
+      "meaning_label": "中央集权",
+      "weight": 3.4,
+      "reason": "中国古代政治制度核心词"
+    },
+    {
+      "term": "专制",
+      "semantic_category": "制度治理",
+      "meaning_label": "君主专制",
+      "weight": 3.1,
+      "reason": "权力结构词"
+    },
+    {
+      "term": "君主专制",
+      "semantic_category": "制度治理",
+      "meaning_label": "君主专制",
+      "weight": 3.3,
+      "reason": "古代政治制度核心词"
+    },
+    {
+      "term": "皇权",
+      "semantic_category": "制度治理",
+      "meaning_label": "皇权政治",
+      "weight": 3.3,
+      "reason": "皇权/君权叙事"
+    },
+    {
+      "term": "君权",
+      "semantic_category": "制度治理",
+      "meaning_label": "皇权政治",
+      "weight": 3.2,
+      "reason": "皇权/君权叙事"
+    },
+    {
+      "term": "王权",
+      "semantic_category": "制度治理",
+      "meaning_label": "皇权政治",
+      "weight": 3.0,
+      "reason": "王权秩序"
+    },
+    {
+      "term": "天命",
+      "semantic_category": "制度治理",
+      "meaning_label": "天命合法性",
+      "weight": 3.0,
+      "reason": "王朝合法性叙事"
+    },
+    {
+      "term": "正统",
+      "semantic_category": "文化保守与礼法",
+      "meaning_label": "文明正统",
+      "weight": 3.0,
+      "reason": "政治与文明合法性叙事"
+    },
+    {
+      "term": "大一统",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "大一统叙事",
+      "weight": 3.3,
+      "reason": "国家统一与中央权威叙事"
+    },
+    {
+      "term": "郡县制",
+      "semantic_category": "制度治理",
+      "meaning_label": "中央集权",
+      "weight": 3.1,
+      "reason": "中央集权地方制度"
+    },
+    {
+      "term": "分封制",
+      "semantic_category": "制度治理",
+      "meaning_label": "封建分封",
+      "weight": 3.1,
+      "reason": "古代封建制度"
+    },
+    {
+      "term": "封建",
+      "semantic_category": "制度治理",
+      "meaning_label": "封建分封",
+      "weight": 2.9,
+      "reason": "需结合古代/现代语境"
+    },
+    {
+      "term": "宗法",
+      "semantic_category": "文化保守与礼法",
+      "meaning_label": "宗法礼制",
+      "weight": 3.2,
+      "reason": "宗法制度"
+    },
+    {
+      "term": "宗法制",
+      "semantic_category": "文化保守与礼法",
+      "meaning_label": "宗法礼制",
+      "weight": 3.3,
+      "reason": "宗法制度"
+    },
+    {
+      "term": "礼法",
+      "semantic_category": "文化保守与礼法",
+      "meaning_label": "传统礼法",
+      "weight": 3.1,
+      "reason": "传统秩序词"
+    },
+    {
+      "term": "礼教",
+      "semantic_category": "文化保守与礼法",
+      "meaning_label": "传统礼法",
+      "weight": 3.2,
+      "reason": "传统秩序词"
+    },
+    {
+      "term": "纲常",
+      "semantic_category": "文化保守与礼法",
+      "meaning_label": "传统礼法",
+      "weight": 3.1,
+      "reason": "儒家伦理秩序"
+    },
+    {
+      "term": "忠孝",
+      "semantic_category": "文化保守与礼法",
+      "meaning_label": "传统礼法",
+      "weight": 2.8,
+      "reason": "传统伦理秩序"
+    },
+    {
+      "term": "科举",
+      "semantic_category": "制度治理",
+      "meaning_label": "官僚选拔制度",
+      "weight": 2.9,
+      "reason": "古代官僚制度"
+    },
+    {
+      "term": "科举制",
+      "semantic_category": "制度治理",
+      "meaning_label": "官僚选拔制度",
+      "weight": 3.0,
+      "reason": "古代官僚制度"
+    },
+    {
+      "term": "官僚",
+      "semantic_category": "制度治理",
+      "meaning_label": "官僚政治",
+      "weight": 2.8,
+      "reason": "国家治理结构"
+    },
+    {
+      "term": "门阀",
+      "semantic_category": "阶层与经济秩序",
+      "meaning_label": "门阀士族秩序",
+      "weight": 3.0,
+      "reason": "古代阶层结构"
+    },
+    {
+      "term": "士族",
+      "semantic_category": "阶层与经济秩序",
+      "meaning_label": "门阀士族秩序",
+      "weight": 3.0,
+      "reason": "古代阶层结构"
+    },
+    {
+      "term": "世家",
+      "semantic_category": "阶层与经济秩序",
+      "meaning_label": "门阀士族秩序",
+      "weight": 2.6,
+      "reason": "世族门第叙事"
+    },
+    {
+      "term": "门第",
+      "semantic_category": "阶层与经济秩序",
+      "meaning_label": "门阀士族秩序",
+      "weight": 2.7,
+      "reason": "世族门第叙事"
+    },
+    {
+      "term": "家国",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "家国叙事",
+      "weight": 3.3,
+      "reason": "家国同构叙事"
+    },
+    {
+      "term": "山河",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "家国叙事",
+      "weight": 3.0,
+      "reason": "国家疆土意象"
+    },
+    {
+      "term": "故国",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "家国叙事",
+      "weight": 3.0,
+      "reason": "故国兴亡叙事"
+    },
+    {
+      "term": "故土",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "家国叙事",
+      "weight": 2.8,
+      "reason": "国家/乡土归属"
+    },
+    {
+      "term": "社稷",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "家国叙事",
+      "weight": 3.2,
+      "reason": "古代国家象征"
+    },
+    {
+      "term": "九州",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "华夏九州",
+      "weight": 2.9,
+      "reason": "华夏地理文明意象"
+    },
+    {
+      "term": "华夏",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "华夏文明叙事",
+      "weight": 3.1,
+      "reason": "文明/民族身份"
+    },
+    {
+      "term": "中原",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "华夏文明叙事",
+      "weight": 2.8,
+      "reason": "中原正统意象"
+    },
+    {
+      "term": "天下",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "天下世界",
+      "weight": 3.0,
+      "reason": "天下秩序叙事"
+    },
+    {
+      "term": "四海",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "天下世界",
+      "weight": 2.7,
+      "reason": "天下秩序意象"
+    },
+    {
+      "term": "万国",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "天下世界",
+      "weight": 2.7,
+      "reason": "世界秩序意象"
+    },
+    {
+      "term": "大同",
+      "semantic_category": "政治路线",
+      "meaning_label": "天下大同",
+      "weight": 3.0,
+      "reason": "政治理想叙事"
+    },
+    {
+      "term": "民族复兴",
+      "semantic_category": "政治路线",
+      "meaning_label": "国家复兴",
+      "weight": 3.3,
+      "reason": "当代国家叙事"
+    },
+    {
+      "term": "复兴",
+      "semantic_category": "政治路线",
+      "meaning_label": "国家复兴",
+      "weight": 2.8,
+      "reason": "国家复兴叙事"
+    },
+    {
+      "term": "崛起",
+      "semantic_category": "政治路线",
+      "meaning_label": "国家复兴",
+      "weight": 2.8,
+      "reason": "国家发展叙事"
+    },
+    {
+      "term": "强国",
+      "semantic_category": "政治路线",
+      "meaning_label": "国家复兴",
+      "weight": 3.0,
+      "reason": "强国叙事"
+    },
+    {
+      "term": "中国梦",
+      "semantic_category": "政治路线",
+      "meaning_label": "国家复兴",
+      "weight": 3.1,
+      "reason": "当代国家叙事"
+    },
+    {
+      "term": "自由",
+      "semantic_category": "政治路线",
+      "meaning_label": "自由主义",
+      "weight": 3.0,
+      "reason": "自由派核心价值词"
+    },
+    {
+      "term": "民主",
+      "semantic_category": "政治路线",
+      "meaning_label": "自由民主",
+      "weight": 3.1,
+      "reason": "自由派核心价值词"
+    },
+    {
+      "term": "宪政",
+      "semantic_category": "政治路线",
+      "meaning_label": "宪政法治",
+      "weight": 3.2,
+      "reason": "自由派制度主张"
+    },
+    {
+      "term": "法治",
+      "semantic_category": "制度治理",
+      "meaning_label": "宪政法治",
+      "weight": 2.9,
+      "reason": "制度治理词"
+    },
+    {
+      "term": "人权",
+      "semantic_category": "政治路线",
+      "meaning_label": "自由民主",
+      "weight": 3.1,
+      "reason": "自由派核心价值词"
+    },
+    {
+      "term": "普世价值",
+      "semantic_category": "政治路线",
+      "meaning_label": "自由民主",
+      "weight": 3.1,
+      "reason": "自由主义/公共讨论词"
+    },
+    {
+      "term": "普世",
+      "semantic_category": "政治路线",
+      "meaning_label": "自由民主",
+      "weight": 2.8,
+      "reason": "普世价值简称"
+    },
+    {
+      "term": "政治体制改革",
+      "semantic_category": "政治路线",
+      "meaning_label": "政治体制改革",
+      "weight": 3.4,
+      "reason": "自由派/改革派制度诉求"
+    },
+    {
+      "term": "政改",
+      "semantic_category": "政治路线",
+      "meaning_label": "政治体制改革",
+      "weight": 3.1,
+      "reason": "政治体制改革简称"
+    },
+    {
+      "term": "公民社会",
+      "semantic_category": "政治路线",
+      "meaning_label": "公民社会",
+      "weight": 3.0,
+      "reason": "自由派公共话语"
+    },
+    {
+      "term": "新左",
+      "semantic_category": "政治路线",
+      "meaning_label": "中国新左派",
+      "weight": 3.3,
+      "reason": "新左派简称"
+    },
+    {
+      "term": "新左派",
+      "semantic_category": "政治路线",
+      "meaning_label": "中国新左派",
+      "weight": 3.4,
+      "reason": "思想派别标签"
+    },
+    {
+      "term": "网左",
+      "semantic_category": "政治路线",
+      "meaning_label": "网络左派",
+      "weight": 3.3,
+      "reason": "中文互联网左翼标签"
+    },
+    {
+      "term": "毛左",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛左",
+      "weight": 3.4,
+      "reason": "网络左翼子标签"
+    },
+    {
+      "term": "左人",
+      "semantic_category": "政治路线",
+      "meaning_label": "网络左派",
+      "weight": 3.0,
+      "reason": "网络左翼自称/他称"
+    },
+    {
+      "term": "老左",
+      "semantic_category": "政治路线",
+      "meaning_label": "传统左派",
+      "weight": 3.0,
+      "reason": "传统左派标签"
+    },
+    {
+      "term": "公有制",
+      "semantic_category": "政治路线",
+      "meaning_label": "公有制与再分配",
+      "weight": 3.1,
+      "reason": "左翼经济制度词"
+    },
+    {
+      "term": "共同富裕",
+      "semantic_category": "政治路线",
+      "meaning_label": "公有制与再分配",
+      "weight": 3.0,
+      "reason": "再分配与平等叙事"
+    },
+    {
+      "term": "再分配",
+      "semantic_category": "政治路线",
+      "meaning_label": "公有制与再分配",
+      "weight": 3.1,
+      "reason": "左翼经济政策词"
+    },
+    {
+      "term": "贫富差距",
+      "semantic_category": "阶层与经济秩序",
+      "meaning_label": "贫富分化",
+      "weight": 3.0,
+      "reason": "社会分配争议"
+    },
+    {
+      "term": "两极分化",
+      "semantic_category": "阶层与经济秩序",
+      "meaning_label": "贫富分化",
+      "weight": 3.0,
+      "reason": "社会分配争议"
+    },
+    {
+      "term": "资本家",
+      "semantic_category": "阶层与经济秩序",
+      "meaning_label": "资本与阶级",
+      "weight": 2.9,
+      "reason": "阶级叙事词"
+    },
+    {
+      "term": "资本",
+      "semantic_category": "阶层与经济秩序",
+      "meaning_label": "资本与阶级",
+      "weight": 2.6,
+      "reason": "需结合语境"
+    },
+    {
+      "term": "剥削",
+      "semantic_category": "阶层与经济秩序",
+      "meaning_label": "资本与阶级",
+      "weight": 3.0,
+      "reason": "阶级叙事词"
+    },
+    {
+      "term": "工人",
+      "semantic_category": "阶层与经济秩序",
+      "meaning_label": "劳动者叙事",
+      "weight": 2.5,
+      "reason": "阶层身份词"
+    },
+    {
+      "term": "农民",
+      "semantic_category": "阶层与经济秩序",
+      "meaning_label": "劳动者叙事",
+      "weight": 2.5,
+      "reason": "阶层身份词"
+    },
+    {
+      "term": "打工人",
+      "semantic_category": "阶层与经济秩序",
+      "meaning_label": "劳动者叙事",
+      "weight": 2.4,
+      "reason": "当代劳动者自嘲/阶层词"
+    },
+    {
+      "term": "牛马",
+      "semantic_category": "阶层与经济秩序",
+      "meaning_label": "劳动者叙事",
+      "weight": 2.4,
+      "reason": "当代劳动与压迫隐喻"
+    },
+    {
+      "term": "人矿",
+      "semantic_category": "阶层与经济秩序",
+      "meaning_label": "劳动者叙事",
+      "weight": 3.0,
+      "reason": "中文互联网阶层隐喻"
+    },
+    {
+      "term": "建制",
+      "semantic_category": "政治路线",
+      "meaning_label": "建制派",
+      "weight": 3.0,
+      "reason": "建制支持/体制内秩序"
+    },
+    {
+      "term": "建制派",
+      "semantic_category": "政治路线",
+      "meaning_label": "建制派",
+      "weight": 3.2,
+      "reason": "立场标签"
+    },
+    {
+      "term": "粉红",
+      "semantic_category": "政治路线",
+      "meaning_label": "网络民族主义",
+      "weight": 3.1,
+      "reason": "中文互联网民族主义标签"
+    },
+    {
+      "term": "小粉红",
+      "semantic_category": "政治路线",
+      "meaning_label": "网络民族主义",
+      "weight": 3.2,
+      "reason": "中文互联网民族主义标签"
+    },
+    {
+      "term": "兔友",
+      "semantic_category": "政治路线",
+      "meaning_label": "兔友建制民族主义",
+      "weight": 3.2,
+      "reason": "网络派别标签"
+    },
+    {
+      "term": "兔兔",
+      "semantic_category": "政治路线",
+      "meaning_label": "兔友建制民族主义",
+      "weight": 3.0,
+      "reason": "兔友昵称"
+    },
+    {
+      "term": "那兔",
+      "semantic_category": "政治路线",
+      "meaning_label": "兔友建制民族主义",
+      "weight": 2.9,
+      "reason": "那年那兔那些事相关符号"
+    },
+    {
+      "term": "爱国",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "爱国主义",
+      "weight": 2.7,
+      "reason": "需结合语境"
+    },
+    {
+      "term": "爱国主义",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "爱国主义",
+      "weight": 3.0,
+      "reason": "国家民族叙事词"
+    },
+    {
+      "term": "民族主义",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "民族主义",
+      "weight": 3.1,
+      "reason": "民族国家政治叙事"
+    },
+    {
+      "term": "工业党",
+      "semantic_category": "政治路线",
+      "meaning_label": "工业党发展主义",
+      "weight": 3.1,
+      "reason": "网络政治思潮标签"
+    },
+    {
+      "term": "入关",
+      "semantic_category": "政治路线",
+      "meaning_label": "入关学",
+      "weight": 2.9,
+      "reason": "网络地缘政治隐喻"
+    },
+    {
+      "term": "入关学",
+      "semantic_category": "政治路线",
+      "meaning_label": "入关学",
+      "weight": 3.1,
+      "reason": "网络地缘政治思潮"
+    },
+    {
+      "term": "东升西降",
+      "semantic_category": "政治路线",
+      "meaning_label": "大国竞争叙事",
+      "weight": 3.1,
+      "reason": "当代国际秩序叙事"
+    },
+    {
+      "term": "百年未有之大变局",
+      "semantic_category": "政治路线",
+      "meaning_label": "大国竞争叙事",
+      "weight": 3.2,
+      "reason": "当代国际秩序叙事"
+    },
+    {
+      "term": "神友",
+      "semantic_category": "政治路线",
+      "meaning_label": "神友反建制",
+      "weight": 3.2,
+      "reason": "网络派别标签"
+    },
+    {
+      "term": "神神",
+      "semantic_category": "政治路线",
+      "meaning_label": "神友反建制",
+      "weight": 3.0,
+      "reason": "神友昵称/他称"
+    },
+    {
+      "term": "逆民",
+      "semantic_category": "政治路线",
+      "meaning_label": "逆向民族主义",
+      "weight": 3.0,
+      "reason": "反民族主义/逆向民族主义标签"
+    },
+    {
+      "term": "反贼",
+      "semantic_category": "政治路线",
+      "meaning_label": "反建制",
+      "weight": 3.0,
+      "reason": "反建制网络标签"
+    },
+    {
+      "term": "恨国",
+      "semantic_category": "政治路线",
+      "meaning_label": "逆向民族主义",
+      "weight": 2.8,
+      "reason": "争议性标签，需结合语境"
+    },
+    {
+      "term": "润",
+      "semantic_category": "政治路线",
+      "meaning_label": "移民逃离叙事",
+      "weight": 2.6,
+      "reason": "中文互联网迁移/逃离隐喻"
+    },
+    {
+      "term": "润学",
+      "semantic_category": "政治路线",
+      "meaning_label": "移民逃离叙事",
+      "weight": 3.0,
+      "reason": "中文互联网迁移/逃离话语"
+    },
+    {
+      "term": "献忠",
+      "semantic_category": "政治路线",
+      "meaning_label": "社会崩坏叙事",
+      "weight": 3.0,
+      "reason": "网络政治黑话，需人工复核"
+    },
+    {
+      "term": "加速",
+      "semantic_category": "政治路线",
+      "meaning_label": "加速主义",
+      "weight": 2.9,
+      "reason": "网络政治黑话"
+    },
+    {
+      "term": "加速主义",
+      "semantic_category": "政治路线",
+      "meaning_label": "加速主义",
+      "weight": 3.1,
+      "reason": "政治黑话/理论标签"
+    },
+    {
+      "term": "乐子人",
+      "semantic_category": "政治路线",
+      "meaning_label": "政治玩梗与冷感",
+      "weight": 2.5,
+      "reason": "立场低确定性/玩梗标签"
+    },
+    {
+      "term": "吃瓜",
+      "semantic_category": "政治路线",
+      "meaning_label": "政治玩梗与冷感",
+      "weight": 2.0,
+      "reason": "旁观/玩梗语境"
+    },
+    {
+      "term": "岁静",
+      "semantic_category": "政治路线",
+      "meaning_label": "政治冷感",
+      "weight": 2.8,
+      "reason": "岁月静好/政治冷感标签"
+    },
+    {
+      "term": "日子人",
+      "semantic_category": "政治路线",
+      "meaning_label": "政治冷感",
+      "weight": 2.7,
+      "reason": "生活优先/政治冷感标签"
+    },
+    {
+      "term": "皇汉",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "皇汉民族主义",
+      "weight": 3.4,
+      "reason": "民族主义网络派别标签"
+    },
+    {
+      "term": "汉本位",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "皇汉民族主义",
+      "weight": 3.2,
+      "reason": "皇汉/汉民族主义词"
+    },
+    {
+      "term": "汉服",
+      "semantic_category": "文化保守与礼法",
+      "meaning_label": "文化民族主义",
+      "weight": 2.2,
+      "reason": "需结合语境，可能只是服饰审美"
+    },
+    {
+      "term": "华夷",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "华夷之辨",
+      "weight": 3.1,
+      "reason": "文明边界叙事"
+    },
+    {
+      "term": "夷夏",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "华夷之辨",
+      "weight": 3.1,
+      "reason": "文明边界叙事"
+    },
+    {
+      "term": "夷狄",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "华夷之辨",
+      "weight": 3.0,
+      "reason": "古代族群秩序词"
+    },
+    {
+      "term": "汉家",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "华夏文明叙事",
+      "weight": 2.8,
+      "reason": "汉民族/王朝身份意象"
+    },
+    {
+      "term": "血统",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "血缘民族主义",
+      "weight": 3.0,
+      "reason": "血缘身份叙事"
+    },
+    {
+      "term": "血脉",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "血缘民族主义",
+      "weight": 2.8,
+      "reason": "血缘身份叙事"
+    },
+    {
+      "term": "保守",
+      "semantic_category": "文化保守与礼法",
+      "meaning_label": "文化保守主义",
+      "weight": 2.8,
+      "reason": "保守主义线索"
+    },
+    {
+      "term": "复古",
+      "semantic_category": "文化保守与礼法",
+      "meaning_label": "文化保守主义",
+      "weight": 2.5,
+      "reason": "复古/传统取向"
+    },
+    {
+      "term": "祖制",
+      "semantic_category": "文化保守与礼法",
+      "meaning_label": "文化保守主义",
+      "weight": 2.9,
+      "reason": "祖制/传统合法性"
+    },
+    {
+      "term": "祖宗之法",
+      "semantic_category": "文化保守与礼法",
+      "meaning_label": "文化保守主义",
+      "weight": 3.1,
+      "reason": "传统合法性叙事"
+    }
+  ],
+  "exclude_terms": [
+    {
+      "term": "好听",
+      "reason": "音乐审美词"
+    },
+    {
+      "term": "难听",
+      "reason": "音乐审美词"
+    },
+    {
+      "term": "上头",
+      "reason": "音乐感受词"
+    },
+    {
+      "term": "循环",
+      "reason": "收听行为词"
+    },
+    {
+      "term": "单曲",
+      "reason": "收听行为词"
+    },
+    {
+      "term": "神曲",
+      "reason": "音乐评价词"
+    },
+    {
+      "term": "宝藏",
+      "reason": "音乐评价词"
+    },
+    {
+      "term": "好歌",
+      "reason": "音乐评价词"
+    },
+    {
+      "term": "前奏",
+      "reason": "音乐结构词"
+    },
+    {
+      "term": "副歌",
+      "reason": "音乐结构词"
+    },
+    {
+      "term": "歌词",
+      "reason": "音乐文本词"
+    },
+    {
+      "term": "编曲",
+      "reason": "音乐制作词"
+    },
+    {
+      "term": "旋律",
+      "reason": "音乐评价词"
+    },
+    {
+      "term": "嗓音",
+      "reason": "演唱评价词"
+    },
+    {
+      "term": "戏腔",
+      "reason": "演唱风格词"
+    },
+    {
+      "term": "唱腔",
+      "reason": "演唱风格词"
+    },
+    {
+      "term": "翻唱",
+      "reason": "版本信息词"
+    },
+    {
+      "term": "原唱",
+      "reason": "版本信息词"
+    },
+    {
+      "term": "版本",
+      "reason": "版本信息词"
+    },
+    {
+      "term": "节奏",
+      "reason": "音乐评价词"
+    },
+    {
+      "term": "氛围",
+      "reason": "审美感受词"
+    },
+    {
+      "term": "泪目",
+      "reason": "情绪词"
+    },
+    {
+      "term": "好哭",
+      "reason": "情绪词"
+    },
+    {
+      "term": "哈哈",
+      "reason": "语气词"
+    },
+    {
+      "term": "哈哈哈",
+      "reason": "语气词"
+    },
+    {
+      "term": "呜呜",
+      "reason": "语气词"
+    },
+    {
+      "term": "绝了",
+      "reason": "泛评价词"
+    },
+    {
+      "term": "好美",
+      "reason": "审美评价词"
+    },
+    {
+      "term": "仙气",
+      "reason": "审美评价词"
+    },
+    {
+      "term": "鸡皮疙瘩",
+      "reason": "情绪/身体反应词"
+    },
+    {
+      "term": "高音",
+      "reason": "演唱技术词"
+    },
+    {
+      "term": "低音",
+      "reason": "演唱技术词"
+    },
+    {
+      "term": "和声",
+      "reason": "音乐制作词"
+    },
+    {
+      "term": "入坑",
+      "reason": "粉丝行为词"
+    },
+    {
+      "term": "推荐",
+      "reason": "平台行为词"
+    },
+    {
+      "term": "古风",
+      "reason": "音乐风格词"
+    },
+    {
+      "term": "歌曲",
+      "reason": "对象泛称"
+    },
+    {
+      "term": "音乐",
+      "reason": "对象泛称"
+    },
+    {
+      "term": "评论",
+      "reason": "平台对象词"
+    },
+    {
+      "term": "视频",
+      "reason": "平台对象词"
+    },
+    {
+      "term": "弹幕",
+      "reason": "平台对象词"
+    },
+    {
+      "term": "作者",
+      "reason": "创作者称呼"
+    },
+    {
+      "term": "老师",
+      "reason": "人物称呼"
+    },
+    {
+      "term": "姐姐",
+      "reason": "人物称呼"
+    },
+    {
+      "term": "哥哥",
+      "reason": "人物称呼"
+    },
+    {
+      "term": "角色",
+      "reason": "剧情对象词"
+    },
+    {
+      "term": "画面",
+      "reason": "视觉评价词"
+    },
+    {
+      "term": "剧情",
+      "reason": "叙事评价词，默认不作政治标签"
+    }
+  ],
+  "meaning_label_overrides": [
+    {
+      "term": "人民万岁",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东时代政治标语",
+      "weight": 3.5,
+      "reason": "统一标语标签"
+    },
+    {
+      "term": "世界人民大团结万岁",
+      "semantic_category": "政治路线",
+      "meaning_label": "国际主义与人民团结标语",
+      "weight": 3.6,
+      "reason": "统一标语标签"
+    },
+    {
+      "term": "四海翻腾云水怒",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 3.7,
+      "reason": "统一诗词标签"
+    },
+    {
+      "term": "萧瑟秋风今又是",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 3.5,
+      "reason": "统一诗词标签"
+    },
+    {
+      "term": "换了人间",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "weight": 3.6,
+      "reason": "统一诗词标签"
+    },
+    {
+      "term": "1984",
+      "semantic_category": "制度治理",
+      "meaning_label": "奥威尔式威权批判",
+      "weight": 3.4,
+      "reason": "统一奥威尔标签"
+    },
+    {
+      "term": "大洋国",
+      "semantic_category": "制度治理",
+      "meaning_label": "奥威尔式威权批判",
+      "weight": 3.5,
+      "reason": "统一奥威尔标签"
+    },
+    {
+      "term": "真理部",
+      "semantic_category": "制度治理",
+      "meaning_label": "奥威尔式威权批判",
+      "weight": 3.6,
+      "reason": "统一奥威尔标签"
+    },
+    {
+      "term": "满清",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "皇汉民族主义",
+      "weight": 3.2,
+      "reason": "统一皇汉标签"
+    },
+    {
+      "term": "大明",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "皇汉民族主义",
+      "weight": 3.0,
+      "reason": "统一皇汉标签"
+    },
+    {
+      "term": "朱元璋",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "皇汉民族主义",
+      "weight": 3.2,
+      "reason": "统一皇汉标签"
+    },
+    {
+      "term": "孙殿英",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "反满清与皇汉叙事",
+      "weight": 3.0,
+      "reason": "统一皇汉标签"
+    },
+    {
+      "term": "大国",
+      "semantic_category": "政治路线",
+      "meaning_label": "建制发展主义",
+      "weight": 2.7,
+      "reason": "统一建制标签"
+    },
+    {
+      "term": "中国制造",
+      "semantic_category": "政治路线",
+      "meaning_label": "建制发展主义",
+      "weight": 3.1,
+      "reason": "统一建制标签"
+    },
+    {
+      "term": "进步",
+      "semantic_category": "政治路线",
+      "meaning_label": "建制进步叙事",
+      "weight": 2.7,
+      "reason": "用户指定：进步归建制派语境"
+    },
+    {
+      "term": "王洪文",
+      "semantic_category": "历史事件",
+      "meaning_label": "王洪文与文革派",
+      "weight": 3.6,
+      "reason": "统一人物标签"
+    },
+    {
+      "term": "小王",
+      "semantic_category": "历史事件",
+      "meaning_label": "王洪文隐晦指代",
+      "weight": 3.0,
+      "reason": "统一代称标签"
+    },
+    {
+      "term": "年轻人",
+      "semantic_category": "历史事件",
+      "meaning_label": "王洪文隐晦指代",
+      "weight": 2.6,
+      "reason": "统一代称标签"
+    },
+    {
+      "term": "小崔",
+      "semantic_category": "历史事件",
+      "meaning_label": "王洪文隐晦指代",
+      "weight": 3.1,
+      "reason": "统一代称标签，保留歧义复核"
+    },
+    {
+      "term": "教员",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东隐晦指代",
+      "weight": 3.5,
+      "reason": "统一代称标签"
+    },
+    {
+      "term": "导师",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东隐晦指代",
+      "weight": 3.2,
+      "reason": "统一代称标签"
+    },
+    {
+      "term": "毛",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东隐晦指代",
+      "weight": 2.8,
+      "reason": "统一代称标签，高歧义"
+    },
+    {
+      "term": "猫",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东隐晦指代",
+      "weight": 2.6,
+      "reason": "统一代称标签，高歧义"
+    },
+    {
+      "term": "司马懿",
+      "semantic_category": "历史事件",
+      "meaning_label": "邓小平隐晦指代",
+      "weight": 3.0,
+      "reason": "用户指定代称"
+    },
+    {
+      "term": "想得开",
+      "semantic_category": "历史事件",
+      "meaning_label": "邓小平隐晦指代",
+      "weight": 3.1,
+      "reason": "用户指定代称"
+    },
+    {
+      "term": "挺得住",
+      "semantic_category": "历史事件",
+      "meaning_label": "邓小平隐晦指代",
+      "weight": 3.1,
+      "reason": "用户指定代称"
+    },
+    {
+      "term": "香草美人",
+      "semantic_category": "政治路线",
+      "meaning_label": "古典文学政治寄托",
+      "weight": 3.0,
+      "reason": "统一文学隐喻标签"
+    },
+    {
+      "term": "改开",
+      "semantic_category": "历史事件",
+      "meaning_label": "改革开放",
+      "weight": 3.4,
+      "reason": "统一简称"
+    },
+    {
+      "term": "文革",
+      "semantic_category": "历史事件",
+      "meaning_label": "文化大革命",
+      "weight": 3.6,
+      "reason": "统一简称"
+    },
+    {
+      "term": "政改",
+      "semantic_category": "政治路线",
+      "meaning_label": "政治体制改革",
+      "weight": 3.2,
+      "reason": "统一简称"
+    },
+    {
+      "term": "小粉红",
+      "semantic_category": "政治路线",
+      "meaning_label": "网络民族主义",
+      "weight": 3.2,
+      "reason": "统一标签"
+    },
+    {
+      "term": "兔友",
+      "semantic_category": "政治路线",
+      "meaning_label": "兔友建制民族主义",
+      "weight": 3.2,
+      "reason": "统一标签"
+    },
+    {
+      "term": "神友",
+      "semantic_category": "政治路线",
+      "meaning_label": "神友反建制",
+      "weight": 3.2,
+      "reason": "统一标签"
+    },
+    {
+      "term": "网左",
+      "semantic_category": "政治路线",
+      "meaning_label": "网络左派",
+      "weight": 3.3,
+      "reason": "统一标签"
+    },
+    {
+      "term": "毛左",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛左",
+      "weight": 3.4,
+      "reason": "统一标签"
+    },
+    {
+      "term": "皇汉",
+      "semantic_category": "国家民族叙事",
+      "meaning_label": "皇汉民族主义",
+      "weight": 3.4,
+      "reason": "统一标签"
+    },
+    {
+      "term": "乐子人",
+      "semantic_category": "政治路线",
+      "meaning_label": "政治玩梗与冷感",
+      "weight": 2.5,
+      "reason": "统一标签"
+    },
+    {
+      "term": "岁静",
+      "semantic_category": "政治路线",
+      "meaning_label": "政治冷感",
+      "weight": 2.8,
+      "reason": "统一标签"
+    },
+    {
+      "term": "日子人",
+      "semantic_category": "政治路线",
+      "meaning_label": "政治冷感",
+      "weight": 2.7,
+      "reason": "统一标签"
+    }
+  ]
+}

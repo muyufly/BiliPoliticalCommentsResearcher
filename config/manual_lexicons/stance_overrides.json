@@ -1,0 +1,1752 @@
+{
+  "term_overrides": [
+    {
+      "term": "人民万岁",
+      "stance": "左",
+      "score": 3.5,
+      "reason": "毛泽东时代政治标语"
+    },
+    {
+      "term": "同志们万岁",
+      "stance": "左",
+      "score": 3.2,
+      "reason": "毛泽东时代政治标语"
+    },
+    {
+      "term": "中国人民大团结万岁",
+      "stance": "左",
+      "score": 3.4,
+      "reason": "人民大团结政治标语"
+    },
+    {
+      "term": "世界人民大团结万岁",
+      "stance": "左",
+      "score": 3.6,
+      "reason": "左翼国际主义标语"
+    },
+    {
+      "term": "全世界人民大团结万岁",
+      "stance": "左",
+      "score": 3.6,
+      "reason": "左翼国际主义标语"
+    },
+    {
+      "term": "全世界无产者联合起来",
+      "stance": "左",
+      "score": 3.7,
+      "reason": "左翼国际主义标语"
+    },
+    {
+      "term": "无产者联合起来",
+      "stance": "左",
+      "score": 3.5,
+      "reason": "左翼国际主义标语"
+    },
+    {
+      "term": "联合起来",
+      "stance": "左",
+      "score": 2.4,
+      "reason": "群众动员口号，需结合语境"
+    },
+    {
+      "term": "组织起来",
+      "stance": "左",
+      "score": 2.7,
+      "reason": "群众路线/组织动员"
+    },
+    {
+      "term": "人民群众",
+      "stance": "左",
+      "score": 2.3,
+      "reason": "群众路线话语"
+    },
+    {
+      "term": "群众路线",
+      "stance": "左",
+      "score": 3.0,
+      "reason": "群众路线术语"
+    },
+    {
+      "term": "为人民服务",
+      "stance": "左",
+      "score": 3.0,
+      "reason": "毛泽东时代政治伦理"
+    },
+    {
+      "term": "人民战争",
+      "stance": "左",
+      "score": 2.9,
+      "reason": "毛泽东军事政治叙事"
+    },
+    {
+      "term": "农村包围城市",
+      "stance": "左",
+      "score": 3.2,
+      "reason": "毛泽东革命路线"
+    },
+    {
+      "term": "枪杆子里面出政权",
+      "stance": "左",
+      "score": 3.4,
+      "reason": "毛泽东革命路线名句"
+    },
+    {
+      "term": "四海翻腾云水怒",
+      "stance": "左",
+      "score": 3.7,
+      "reason": "毛泽东诗词政治隐喻"
+    },
+    {
+      "term": "五洲震荡风雷激",
+      "stance": "左",
+      "score": 3.7,
+      "reason": "毛泽东诗词政治隐喻"
+    },
+    {
+      "term": "四海五洲",
+      "stance": "左",
+      "score": 3.8,
+      "reason": "毛泽东《满江红·和郭沫若同志》互文"
+    },
+    {
+      "term": "四海和五洲",
+      "stance": "左",
+      "score": 3.9,
+      "reason": "《四海五洲》歌词拆用毛泽东诗词"
+    },
+    {
+      "term": "囿于四海和五洲",
+      "stance": "左",
+      "score": 4.0,
+      "reason": "《四海五洲》歌词直接触发毛泽东诗词互文"
+    },
+    {
+      "term": "五洲",
+      "stance": "左",
+      "score": 2.8,
+      "reason": "与四海、风雷、翻腾共现时指向毛泽东诗词"
+    },
+    {
+      "term": "四海翻腾",
+      "stance": "左",
+      "score": 3.3,
+      "reason": "毛泽东诗词片段变体"
+    },
+    {
+      "term": "五洲震荡",
+      "stance": "左",
+      "score": 3.3,
+      "reason": "毛泽东诗词片段变体"
+    },
+    {
+      "term": "云水怒",
+      "stance": "左",
+      "score": 3.0,
+      "reason": "毛泽东诗词片段"
+    },
+    {
+      "term": "风雷激",
+      "stance": "左",
+      "score": 3.0,
+      "reason": "毛泽东诗词片段"
+    },
+    {
+      "term": "翻腾的风雷",
+      "stance": "左",
+      "score": 3.6,
+      "reason": "《四海五洲》歌词重组毛泽东诗词意象"
+    },
+    {
+      "term": "翻腾风雷",
+      "stance": "左",
+      "score": 3.3,
+      "reason": "毛泽东诗词变体压缩表达"
+    },
+    {
+      "term": "风雷",
+      "stance": "左",
+      "score": 2.5,
+      "reason": "与四海、五洲、翻腾共现时作为毛泽东诗词线索"
+    },
+    {
+      "term": "克里姆林宫的花",
+      "stance": "左",
+      "score": 2.8,
+      "reason": "苏联/国际共运意象"
+    },
+    {
+      "term": "褪色的口号",
+      "stance": "左",
+      "score": 2.5,
+      "reason": "政治标语记忆"
+    },
+    {
+      "term": "文娱汇演集体活动",
+      "stance": "左",
+      "score": 2.6,
+      "reason": "群众文艺与集体活动时代感"
+    },
+    {
+      "term": "萧瑟秋风今又是",
+      "stance": "左",
+      "score": 3.4,
+      "reason": "毛泽东诗词政治隐喻"
+    },
+    {
+      "term": "换了人间",
+      "stance": "左",
+      "score": 3.5,
+      "reason": "毛泽东诗词新社会叙事"
+    },
+    {
+      "term": "天若有情天亦老",
+      "stance": "左",
+      "score": 3.0,
+      "reason": "毛泽东诗词引用"
+    },
+    {
+      "term": "人间正道是沧桑",
+      "stance": "左",
+      "score": 3.2,
+      "reason": "毛泽东诗词革命历史叙事"
+    },
+    {
+      "term": "雄关漫道真如铁",
+      "stance": "左",
+      "score": 3.0,
+      "reason": "毛泽东诗词引用"
+    },
+    {
+      "term": "而今迈步从头越",
+      "stance": "左",
+      "score": 3.0,
+      "reason": "毛泽东诗词引用"
+    },
+    {
+      "term": "问苍茫大地",
+      "stance": "左",
+      "score": 2.8,
+      "reason": "毛泽东诗词引用"
+    },
+    {
+      "term": "谁主沉浮",
+      "stance": "左",
+      "score": 2.9,
+      "reason": "毛泽东诗词政治主体性"
+    },
+    {
+      "term": "风华正茂",
+      "stance": "左",
+      "score": 2.4,
+      "reason": "青年革命主体叙事，低权重"
+    },
+    {
+      "term": "挥斥方遒",
+      "stance": "左",
+      "score": 2.8,
+      "reason": "青年革命主体叙事"
+    },
+    {
+      "term": "指点江山",
+      "stance": "左",
+      "score": 2.2,
+      "reason": "毛泽东诗词片段，需语境"
+    },
+    {
+      "term": "激扬文字",
+      "stance": "左",
+      "score": 2.2,
+      "reason": "毛泽东诗词片段，需语境"
+    },
+    {
+      "term": "粪土当年万户侯",
+      "stance": "左",
+      "score": 3.1,
+      "reason": "反权贵/青年革命主体叙事"
+    },
+    {
+      "term": "数风流人物",
+      "stance": "左",
+      "score": 2.8,
+      "reason": "毛泽东诗词引用"
+    },
+    {
+      "term": "还看今朝",
+      "stance": "左",
+      "score": 2.8,
+      "reason": "毛泽东诗词新政权叙事"
+    },
+    {
+      "term": "一唱雄鸡天下白",
+      "stance": "左",
+      "score": 3.2,
+      "reason": "毛泽东诗词新中国叙事"
+    },
+    {
+      "term": "六亿神州尽舜尧",
+      "stance": "左",
+      "score": 3.3,
+      "reason": "毛泽东诗词人民主体叙事"
+    },
+    {
+      "term": "喜看稻菽千重浪",
+      "stance": "左",
+      "score": 3.0,
+      "reason": "毛泽东诗词农业/人民叙事"
+    },
+    {
+      "term": "遍地英雄下夕烟",
+      "stance": "左",
+      "score": 3.0,
+      "reason": "毛泽东诗词人民英雄叙事"
+    },
+    {
+      "term": "红旗漫卷西风",
+      "stance": "左",
+      "score": 3.0,
+      "reason": "毛泽东诗词革命符号"
+    },
+    {
+      "term": "战地黄花分外香",
+      "stance": "左",
+      "score": 2.8,
+      "reason": "毛泽东诗词革命意象"
+    },
+    {
+      "term": "1984",
+      "stance": "神",
+      "score": 3.2,
+      "reason": "奥威尔式威权批判，自由派语境"
+    },
+    {
+      "term": "一九八四",
+      "stance": "神",
+      "score": 3.2,
+      "reason": "奥威尔式威权批判，自由派语境"
+    },
+    {
+      "term": "大洋国",
+      "stance": "神",
+      "score": 3.3,
+      "reason": "奥威尔式威权批判"
+    },
+    {
+      "term": "真理部",
+      "stance": "神",
+      "score": 3.5,
+      "reason": "奥威尔式威权批判"
+    },
+    {
+      "term": "老大哥",
+      "stance": "神",
+      "score": 3.0,
+      "reason": "奥威尔式监控权力批判"
+    },
+    {
+      "term": "电幕",
+      "stance": "神",
+      "score": 3.0,
+      "reason": "奥威尔式监控隐喻"
+    },
+    {
+      "term": "思想警察",
+      "stance": "神",
+      "score": 3.4,
+      "reason": "奥威尔式威权批判"
+    },
+    {
+      "term": "双重思想",
+      "stance": "神",
+      "score": 3.1,
+      "reason": "奥威尔式政治语言批判"
+    },
+    {
+      "term": "新话",
+      "stance": "神",
+      "score": 2.9,
+      "reason": "奥威尔式政治语言批判"
+    },
+    {
+      "term": "战争即和平",
+      "stance": "神",
+      "score": 3.4,
+      "reason": "奥威尔式政治口号批判"
+    },
+    {
+      "term": "自由即奴役",
+      "stance": "神",
+      "score": 3.4,
+      "reason": "奥威尔式政治口号批判"
+    },
+    {
+      "term": "无知即力量",
+      "stance": "神",
+      "score": 3.4,
+      "reason": "奥威尔式政治口号批判"
+    },
+    {
+      "term": "奥威尔",
+      "stance": "神",
+      "score": 2.8,
+      "reason": "奥威尔政治寓言引用"
+    },
+    {
+      "term": "奥威尔式",
+      "stance": "神",
+      "score": 3.2,
+      "reason": "奥威尔政治寓言引用"
+    },
+    {
+      "term": "满清",
+      "stance": "皇",
+      "score": 3.0,
+      "reason": "反满清/皇汉语境"
+    },
+    {
+      "term": "鞑清",
+      "stance": "皇",
+      "score": 3.4,
+      "reason": "反满清贬称"
+    },
+    {
+      "term": "清妖",
+      "stance": "皇",
+      "score": 3.4,
+      "reason": "反满清贬称"
+    },
+    {
+      "term": "大明",
+      "stance": "皇",
+      "score": 2.7,
+      "reason": "明朝正统/皇汉线索"
+    },
+    {
+      "term": "明粉",
+      "stance": "皇",
+      "score": 3.0,
+      "reason": "明朝认同/皇汉语境"
+    },
+    {
+      "term": "反清复明",
+      "stance": "皇",
+      "score": 3.5,
+      "reason": "反满清/明朝复兴叙事"
+    },
+    {
+      "term": "驱除鞑虏",
+      "stance": "皇",
+      "score": 3.5,
+      "reason": "民族革命/皇汉常用语"
+    },
+    {
+      "term": "恢复中华",
+      "stance": "皇",
+      "score": 3.4,
+      "reason": "民族革命/皇汉常用语"
+    },
+    {
+      "term": "朱元璋",
+      "stance": "皇",
+      "score": 3.1,
+      "reason": "明太祖/皇汉民族主义线索"
+    },
+    {
+      "term": "洪武",
+      "stance": "皇",
+      "score": 2.7,
+      "reason": "明朝叙事线索"
+    },
+    {
+      "term": "明太祖",
+      "stance": "皇",
+      "score": 3.0,
+      "reason": "朱元璋称谓"
+    },
+    {
+      "term": "孙殿英",
+      "stance": "皇",
+      "score": 3.0,
+      "reason": "反满清与清东陵语境"
+    },
+    {
+      "term": "清东陵",
+      "stance": "皇",
+      "score": 2.7,
+      "reason": "孙殿英/反满清语境"
+    },
+    {
+      "term": "华夷之辨",
+      "stance": "皇",
+      "score": 3.2,
+      "reason": "皇汉/文明边界叙事"
+    },
+    {
+      "term": "剃发易服",
+      "stance": "皇",
+      "score": 3.1,
+      "reason": "明清易代创伤叙事"
+    },
+    {
+      "term": "扬州十日",
+      "stance": "皇",
+      "score": 3.0,
+      "reason": "明清易代创伤叙事"
+    },
+    {
+      "term": "嘉定三屠",
+      "stance": "皇",
+      "score": 3.0,
+      "reason": "明清易代创伤叙事"
+    },
+    {
+      "term": "大国",
+      "stance": "兔",
+      "score": 2.2,
+      "reason": "建制大国叙事"
+    },
+    {
+      "term": "大国崛起",
+      "stance": "兔",
+      "score": 3.0,
+      "reason": "建制发展主义叙事"
+    },
+    {
+      "term": "中国制造",
+      "stance": "兔",
+      "score": 3.0,
+      "reason": "制造强国/建制发展主义"
+    },
+    {
+      "term": "中国制造2025",
+      "stance": "兔",
+      "score": 3.2,
+      "reason": "产业政策/制造强国叙事"
+    },
+    {
+      "term": "制造强国",
+      "stance": "兔",
+      "score": 3.1,
+      "reason": "建制发展主义"
+    },
+    {
+      "term": "科技强国",
+      "stance": "兔",
+      "score": 2.9,
+      "reason": "建制发展主义"
+    },
+    {
+      "term": "进步",
+      "stance": "兔",
+      "score": 2.1,
+      "reason": "用户定义：进步在本项目中偏建制发展叙事"
+    },
+    {
+      "term": "发展才是硬道理",
+      "stance": "兔",
+      "score": 3.3,
+      "reason": "邓小平发展主义话语"
+    },
+    {
+      "term": "摸着石头过河",
+      "stance": "兔",
+      "score": 3.1,
+      "reason": "改革开放方法论"
+    },
+    {
+      "term": "黑猫白猫",
+      "stance": "兔",
+      "score": 3.1,
+      "reason": "邓小平实用主义改革话语"
+    },
+    {
+      "term": "先富带后富",
+      "stance": "兔",
+      "score": 2.9,
+      "reason": "改革开放分配话语"
+    },
+    {
+      "term": "王洪文",
+      "stance": "左",
+      "score": 3.4,
+      "reason": "文革派/四人帮成员，用户要求重点关注"
+    },
+    {
+      "term": "王副主席",
+      "stance": "左",
+      "score": 3.3,
+      "reason": "王洪文职务代称"
+    },
+    {
+      "term": "小王",
+      "stance": "左",
+      "score": 2.8,
+      "reason": "项目人工规则：王洪文隐晦指代，需复核"
+    },
+    {
+      "term": "年轻人",
+      "stance": "左",
+      "score": 2.2,
+      "reason": "项目人工规则：可能指王洪文年轻接班人形象，需复核"
+    },
+    {
+      "term": "小崔",
+      "stance": "左",
+      "score": 3.0,
+      "reason": "项目人工规则：用户指定重点关注，存在歧义"
+    },
+    {
+      "term": "四人帮",
+      "stance": "左",
+      "score": 2.8,
+      "reason": "文革派语境，需判断褒贬"
+    },
+    {
+      "term": "王张江姚",
+      "stance": "左",
+      "score": 3.2,
+      "reason": "四人帮成员简称"
+    },
+    {
+      "term": "张春桥",
+      "stance": "左",
+      "score": 2.8,
+      "reason": "四人帮/文革派成员"
+    },
+    {
+      "term": "江青",
+      "stance": "左",
+      "score": 2.8,
+      "reason": "四人帮/文革派成员"
+    },
+    {
+      "term": "姚文元",
+      "stance": "左",
+      "score": 2.8,
+      "reason": "四人帮/文革派成员"
+    },
+    {
+      "term": "上海公社",
+      "stance": "左",
+      "score": 3.0,
+      "reason": "文革造反派与上海公社语境"
+    },
+    {
+      "term": "一月风暴",
+      "stance": "左",
+      "score": 3.0,
+      "reason": "上海文革夺权事件"
+    },
+    {
+      "term": "毛泽东",
+      "stance": "左",
+      "score": 3.2,
+      "reason": "毛主义/毛时代叙事"
+    },
+    {
+      "term": "毛主席",
+      "stance": "左",
+      "score": 3.2,
+      "reason": "毛泽东称谓"
+    },
+    {
+      "term": "教员",
+      "stance": "左",
+      "score": 3.4,
+      "reason": "毛泽东常见代称"
+    },
+    {
+      "term": "导师",
+      "stance": "左",
+      "score": 2.9,
+      "reason": "革命导师/毛泽东称谓，需语境"
+    },
+    {
+      "term": "毛",
+      "stance": "左",
+      "score": 2.5,
+      "reason": "毛泽东简称，高歧义"
+    },
+    {
+      "term": "猫",
+      "stance": "左",
+      "score": 2.3,
+      "reason": "毛泽东谐音代称，高歧义"
+    },
+    {
+      "term": "腊肉",
+      "stance": "左",
+      "score": 2.7,
+      "reason": "毛泽东黑话称呼，可能为反毛语境，交给AI复核"
+    },
+    {
+      "term": "红太阳",
+      "stance": "左",
+      "score": 3.1,
+      "reason": "毛泽东崇拜符号"
+    },
+    {
+      "term": "伟大领袖",
+      "stance": "左",
+      "score": 2.7,
+      "reason": "毛时代领袖称谓"
+    },
+    {
+      "term": "伟大导师",
+      "stance": "左",
+      "score": 2.8,
+      "reason": "毛时代领袖称谓"
+    },
+    {
+      "term": "太祖",
+      "stance": "左",
+      "score": 2.5,
+      "reason": "可能指毛泽东，也可能指古代帝王，需语境"
+    },
+    {
+      "term": "邓小平",
+      "stance": "兔",
+      "score": 2.8,
+      "reason": "改革开放核心人物，按改开/建制路线处理"
+    },
+    {
+      "term": "邓公",
+      "stance": "兔",
+      "score": 2.8,
+      "reason": "邓小平尊称"
+    },
+    {
+      "term": "稻上飞",
+      "stance": "兔",
+      "score": 2.5,
+      "reason": "邓小平谐音代称，需复核"
+    },
+    {
+      "term": "稻",
+      "stance": "兔",
+      "score": 1.8,
+      "reason": "邓小平谐音简称，高歧义"
+    },
+    {
+      "term": "司马懿",
+      "stance": "兔",
+      "score": 2.4,
+      "reason": "用户指定：邓小平隐晦指代，可能带讽刺"
+    },
+    {
+      "term": "想得开",
+      "stance": "兔",
+      "score": 2.7,
+      "reason": "用户指定：邓小平隐晦指代"
+    },
+    {
+      "term": "挺得住",
+      "stance": "兔",
+      "score": 2.7,
+      "reason": "用户指定：邓小平隐晦指代"
+    },
+    {
+      "term": "矮子",
+      "stance": "兔",
+      "score": 2.2,
+      "reason": "邓小平外貌代称，可能带批评"
+    },
+    {
+      "term": "二代核心",
+      "stance": "兔",
+      "score": 2.8,
+      "reason": "邓小平政治身份代称"
+    },
+    {
+      "term": "香草美人",
+      "stance": "左",
+      "score": 1.8,
+      "reason": "文学政治寄托，只作弱左翼/政治抒情线索"
+    },
+    {
+      "term": "美人香草",
+      "stance": "左",
+      "score": 1.8,
+      "reason": "文学政治寄托，只作弱线索"
+    },
+    {
+      "term": "屈原",
+      "stance": "左",
+      "score": 1.6,
+      "reason": "政治放逐/忠贞文学传统，弱线索"
+    },
+    {
+      "term": "离骚",
+      "stance": "左",
+      "score": 1.6,
+      "reason": "香草美人传统文本，弱线索"
+    },
+    {
+      "term": "神友",
+      "stance": "神",
+      "score": 3.4,
+      "reason": "网络反建制/逆向民族主义标签"
+    },
+    {
+      "term": "神神",
+      "stance": "神",
+      "score": 3.2,
+      "reason": "神友昵称/他称"
+    },
+    {
+      "term": "反贼",
+      "stance": "神",
+      "score": 3.0,
+      "reason": "反建制网络标签"
+    },
+    {
+      "term": "逆民",
+      "stance": "神",
+      "score": 3.0,
+      "reason": "逆向民族主义标签"
+    },
+    {
+      "term": "恨国",
+      "stance": "神",
+      "score": 2.7,
+      "reason": "争议性反民族主义标签"
+    },
+    {
+      "term": "润",
+      "stance": "神",
+      "score": 2.2,
+      "reason": "逃离/移民政治隐喻"
+    },
+    {
+      "term": "润学",
+      "stance": "神",
+      "score": 2.8,
+      "reason": "逃离/移民政治隐喻"
+    },
+    {
+      "term": "自由",
+      "stance": "神",
+      "score": 1.6,
+      "reason": "自由派价值词，低权重防误判"
+    },
+    {
+      "term": "民主",
+      "stance": "神",
+      "score": 1.8,
+      "reason": "自由民主价值词"
+    },
+    {
+      "term": "宪政",
+      "stance": "神",
+      "score": 2.4,
+      "reason": "自由派制度主张"
+    },
+    {
+      "term": "人权",
+      "stance": "神",
+      "score": 2.2,
+      "reason": "自由派价值词"
+    },
+    {
+      "term": "普世",
+      "stance": "神",
+      "score": 2.3,
+      "reason": "普世价值语境"
+    },
+    {
+      "term": "普世价值",
+      "stance": "神",
+      "score": 2.6,
+      "reason": "自由派公共话语"
+    },
+    {
+      "term": "政治体制改革",
+      "stance": "神",
+      "score": 2.7,
+      "reason": "自由派/改革派制度主张"
+    },
+    {
+      "term": "政改",
+      "stance": "神",
+      "score": 2.5,
+      "reason": "政治体制改革简称"
+    },
+    {
+      "term": "公民社会",
+      "stance": "神",
+      "score": 2.3,
+      "reason": "自由派公共话语"
+    },
+    {
+      "term": "启蒙",
+      "stance": "神",
+      "score": 1.7,
+      "reason": "启蒙自由主义线索，低权重"
+    },
+    {
+      "term": "左派",
+      "stance": "左",
+      "score": 2.8,
+      "reason": "左翼标签"
+    },
+    {
+      "term": "新左",
+      "stance": "左",
+      "score": 3.2,
+      "reason": "新左派简称"
+    },
+    {
+      "term": "新左派",
+      "stance": "左",
+      "score": 3.3,
+      "reason": "思想派别标签"
+    },
+    {
+      "term": "网左",
+      "stance": "左",
+      "score": 3.3,
+      "reason": "网络左派标签"
+    },
+    {
+      "term": "左人",
+      "stance": "左",
+      "score": 3.0,
+      "reason": "网络左翼自称/他称"
+    },
+    {
+      "term": "毛左",
+      "stance": "左",
+      "score": 3.5,
+      "reason": "毛左标签"
+    },
+    {
+      "term": "老左",
+      "stance": "左",
+      "score": 2.9,
+      "reason": "传统左派标签"
+    },
+    {
+      "term": "阶级斗争",
+      "stance": "左",
+      "score": 3.1,
+      "reason": "左翼政治叙事"
+    },
+    {
+      "term": "阶级敌人",
+      "stance": "左",
+      "score": 3.0,
+      "reason": "政治运动/阶级叙事"
+    },
+    {
+      "term": "资本家",
+      "stance": "左",
+      "score": 2.6,
+      "reason": "阶级批判线索"
+    },
+    {
+      "term": "剥削",
+      "stance": "左",
+      "score": 2.8,
+      "reason": "阶级批判线索"
+    },
+    {
+      "term": "公有制",
+      "stance": "左",
+      "score": 2.9,
+      "reason": "左翼经济制度词"
+    },
+    {
+      "term": "计划经济",
+      "stance": "左",
+      "score": 2.7,
+      "reason": "计划经济倾向"
+    },
+    {
+      "term": "人民公社",
+      "stance": "左",
+      "score": 2.8,
+      "reason": "毛时代制度符号"
+    },
+    {
+      "term": "公社",
+      "stance": "左",
+      "score": 2.0,
+      "reason": "需结合语境，低权重"
+    },
+    {
+      "term": "文革",
+      "stance": "左",
+      "score": 2.2,
+      "reason": "可能为毛左/反毛左语境，保守加分"
+    },
+    {
+      "term": "红卫兵",
+      "stance": "左",
+      "score": 2.4,
+      "reason": "文革政治符号，需语境"
+    },
+    {
+      "term": "造反派",
+      "stance": "左",
+      "score": 2.8,
+      "reason": "激进左翼动员符号"
+    },
+    {
+      "term": "再分配",
+      "stance": "左",
+      "score": 2.6,
+      "reason": "平等/分配诉求"
+    },
+    {
+      "term": "共同富裕",
+      "stance": "左",
+      "score": 2.2,
+      "reason": "再分配/建制均可用，低权重"
+    },
+    {
+      "term": "贫富差距",
+      "stance": "左",
+      "score": 2.0,
+      "reason": "分配批判线索"
+    },
+    {
+      "term": "两极分化",
+      "stance": "左",
+      "score": 2.1,
+      "reason": "分配批判线索"
+    },
+    {
+      "term": "打工人",
+      "stance": "左",
+      "score": 1.5,
+      "reason": "劳动者叙事，低权重"
+    },
+    {
+      "term": "人矿",
+      "stance": "左",
+      "score": 2.0,
+      "reason": "劳动者/阶层隐喻"
+    },
+    {
+      "term": "兔友",
+      "stance": "兔",
+      "score": 3.4,
+      "reason": "建制民族主义标签"
+    },
+    {
+      "term": "兔兔",
+      "stance": "兔",
+      "score": 3.0,
+      "reason": "兔友昵称"
+    },
+    {
+      "term": "那兔",
+      "stance": "兔",
+      "score": 2.8,
+      "reason": "那年那兔相关符号"
+    },
+    {
+      "term": "粉红",
+      "stance": "兔",
+      "score": 3.0,
+      "reason": "网络民族主义标签"
+    },
+    {
+      "term": "小粉红",
+      "stance": "兔",
+      "score": 3.2,
+      "reason": "网络民族主义标签"
+    },
+    {
+      "term": "建制",
+      "stance": "兔",
+      "score": 2.8,
+      "reason": "建制支持线索"
+    },
+    {
+      "term": "建制派",
+      "stance": "兔",
+      "score": 3.1,
+      "reason": "建制立场标签"
+    },
+    {
+      "term": "改开",
+      "stance": "兔",
+      "score": 2.6,
+      "reason": "支持改开/特色语境常见线索"
+    },
+    {
+      "term": "改革开放",
+      "stance": "兔",
+      "score": 2.5,
+      "reason": "支持改开时归兔，需语境"
+    },
+    {
+      "term": "特色",
+      "stance": "兔",
+      "score": 2.0,
+      "reason": "中国特色社会主义简称线索"
+    },
+    {
+      "term": "中国特色社会主义",
+      "stance": "兔",
+      "score": 3.0,
+      "reason": "建制路线词"
+    },
+    {
+      "term": "民族复兴",
+      "stance": "兔",
+      "score": 2.8,
+      "reason": "当代国家叙事"
+    },
+    {
+      "term": "复兴",
+      "stance": "兔",
+      "score": 1.9,
+      "reason": "国家复兴叙事，低权重防误判"
+    },
+    {
+      "term": "中国梦",
+      "stance": "兔",
+      "score": 2.7,
+      "reason": "当代国家叙事"
+    },
+    {
+      "term": "强国",
+      "stance": "兔",
+      "score": 2.3,
+      "reason": "强国/发展叙事"
+    },
+    {
+      "term": "崛起",
+      "stance": "兔",
+      "score": 2.2,
+      "reason": "国家发展叙事"
+    },
+    {
+      "term": "东升西降",
+      "stance": "兔",
+      "score": 2.8,
+      "reason": "大国竞争叙事"
+    },
+    {
+      "term": "百年未有之大变局",
+      "stance": "兔",
+      "score": 2.8,
+      "reason": "大国竞争叙事"
+    },
+    {
+      "term": "爱国",
+      "stance": "兔",
+      "score": 1.8,
+      "reason": "爱国主义线索，低权重"
+    },
+    {
+      "term": "爱国主义",
+      "stance": "兔",
+      "score": 2.3,
+      "reason": "国家叙事线索"
+    },
+    {
+      "term": "工业党",
+      "stance": "兔",
+      "score": 2.5,
+      "reason": "发展主义/工业主义网络思潮"
+    },
+    {
+      "term": "入关",
+      "stance": "兔",
+      "score": 2.2,
+      "reason": "大国竞争隐喻"
+    },
+    {
+      "term": "入关学",
+      "stance": "兔",
+      "score": 2.5,
+      "reason": "大国竞争隐喻"
+    },
+    {
+      "term": "稳定",
+      "stance": "兔",
+      "score": 1.8,
+      "reason": "秩序/稳定叙事，低权重"
+    },
+    {
+      "term": "发展",
+      "stance": "兔",
+      "score": 1.4,
+      "reason": "发展叙事，弱线索"
+    },
+    {
+      "term": "皇汉",
+      "stance": "皇",
+      "score": 3.5,
+      "reason": "皇汉民族主义标签"
+    },
+    {
+      "term": "汉本位",
+      "stance": "皇",
+      "score": 3.4,
+      "reason": "汉民族主义标签"
+    },
+    {
+      "term": "民族主义",
+      "stance": "皇",
+      "score": 2.5,
+      "reason": "民族主义线索，兔/皇需语境"
+    },
+    {
+      "term": "汉家",
+      "stance": "皇",
+      "score": 2.7,
+      "reason": "汉民族/王朝身份意象"
+    },
+    {
+      "term": "华夏",
+      "stance": "皇",
+      "score": 2.4,
+      "reason": "华夏文明叙事"
+    },
+    {
+      "term": "华夷",
+      "stance": "皇",
+      "score": 3.0,
+      "reason": "华夷之辨"
+    },
+    {
+      "term": "夷夏",
+      "stance": "皇",
+      "score": 3.0,
+      "reason": "华夷之辨"
+    },
+    {
+      "term": "夷狄",
+      "stance": "皇",
+      "score": 2.8,
+      "reason": "古代族群秩序词"
+    },
+    {
+      "term": "正统",
+      "stance": "皇",
+      "score": 2.5,
+      "reason": "正统/文明合法性"
+    },
+    {
+      "term": "大一统",
+      "stance": "皇",
+      "score": 2.7,
+      "reason": "大一统秩序叙事"
+    },
+    {
+      "term": "皇权",
+      "stance": "皇",
+      "score": 2.6,
+      "reason": "权威/王朝秩序"
+    },
+    {
+      "term": "君权",
+      "stance": "皇",
+      "score": 2.5,
+      "reason": "权威/王朝秩序"
+    },
+    {
+      "term": "天命",
+      "stance": "皇",
+      "score": 2.3,
+      "reason": "天命合法性"
+    },
+    {
+      "term": "宗法",
+      "stance": "皇",
+      "score": 2.6,
+      "reason": "宗法礼制"
+    },
+    {
+      "term": "宗法制",
+      "stance": "皇",
+      "score": 2.8,
+      "reason": "宗法礼制"
+    },
+    {
+      "term": "礼教",
+      "stance": "皇",
+      "score": 2.6,
+      "reason": "文化保守主义"
+    },
+    {
+      "term": "礼法",
+      "stance": "皇",
+      "score": 2.5,
+      "reason": "文化保守主义"
+    },
+    {
+      "term": "纲常",
+      "stance": "皇",
+      "score": 2.7,
+      "reason": "传统伦理秩序"
+    },
+    {
+      "term": "忠孝",
+      "stance": "皇",
+      "score": 2.2,
+      "reason": "传统伦理秩序"
+    },
+    {
+      "term": "保守",
+      "stance": "皇",
+      "score": 2.0,
+      "reason": "保守主义线索，低权重"
+    },
+    {
+      "term": "复古",
+      "stance": "皇",
+      "score": 2.0,
+      "reason": "文化保守线索"
+    },
+    {
+      "term": "祖制",
+      "stance": "皇",
+      "score": 2.4,
+      "reason": "传统合法性叙事"
+    },
+    {
+      "term": "祖宗之法",
+      "stance": "皇",
+      "score": 2.8,
+      "reason": "传统合法性叙事"
+    },
+    {
+      "term": "血统",
+      "stance": "皇",
+      "score": 2.8,
+      "reason": "血缘民族主义"
+    },
+    {
+      "term": "血脉",
+      "stance": "皇",
+      "score": 2.5,
+      "reason": "血缘民族主义"
+    },
+    {
+      "term": "汉服",
+      "stance": "皇",
+      "score": 1.5,
+      "reason": "文化民族主义弱线索，需语境"
+    },
+    {
+      "term": "乐子人",
+      "stance": "乐子人",
+      "score": 4.0,
+      "reason": "明确无严肃立场/看热闹标签"
+    },
+    {
+      "term": "吃瓜",
+      "stance": "乐子人",
+      "score": 3.0,
+      "reason": "旁观/看热闹"
+    },
+    {
+      "term": "看乐子",
+      "stance": "乐子人",
+      "score": 3.4,
+      "reason": "看热闹语境"
+    },
+    {
+      "term": "乐",
+      "stance": "乐子人",
+      "score": 1.0,
+      "reason": "弱玩梗信号，避免过度覆盖"
+    },
+    {
+      "term": "岁静",
+      "stance": "乐子人",
+      "score": 2.8,
+      "reason": "政治冷感/岁月静好"
+    },
+    {
+      "term": "日子人",
+      "stance": "乐子人",
+      "score": 2.9,
+      "reason": "生活优先/政治冷感"
+    },
+    {
+      "term": "摆烂",
+      "stance": "乐子人",
+      "score": 2.0,
+      "reason": "犬儒/冷感语境"
+    },
+    {
+      "term": "抽象",
+      "stance": "乐子人",
+      "score": 1.8,
+      "reason": "玩梗语境"
+    },
+    {
+      "term": "地狱笑话",
+      "stance": "乐子人",
+      "score": 2.2,
+      "reason": "玩梗/黑色幽默语境"
+    }
+  ],
+  "meaning_overrides": [
+    {
+      "meaning_label": "毛泽东时代政治标语",
+      "stance": "左",
+      "score": 3.5,
+      "reason": "毛时代政治标语归左派"
+    },
+    {
+      "meaning_label": "国际主义与人民团结标语",
+      "stance": "左",
+      "score": 3.6,
+      "reason": "左翼国际主义标语"
+    },
+    {
+      "meaning_label": "群众联合与政治动员",
+      "stance": "左",
+      "score": 2.8,
+      "reason": "群众动员归左派"
+    },
+    {
+      "meaning_label": "群众路线",
+      "stance": "左",
+      "score": 2.9,
+      "reason": "群众路线归左派"
+    },
+    {
+      "meaning_label": "毛泽东军事政治叙事",
+      "stance": "左",
+      "score": 3.0,
+      "reason": "毛泽东革命路线归左派"
+    },
+    {
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "stance": "左",
+      "score": 3.6,
+      "reason": "毛泽东诗词政治引用归左派"
+    },
+    {
+      "meaning_label": "青年革命主体叙事",
+      "stance": "左",
+      "score": 2.8,
+      "reason": "青年革命主体叙事归左派"
+    },
+    {
+      "meaning_label": "王洪文与文革派",
+      "stance": "左",
+      "score": 3.4,
+      "reason": "王洪文/文革派重点标签"
+    },
+    {
+      "meaning_label": "王洪文隐晦指代",
+      "stance": "左",
+      "score": 3.0,
+      "reason": "用户指定代称，重点关注"
+    },
+    {
+      "meaning_label": "四人帮与文革派",
+      "stance": "左",
+      "score": 3.0,
+      "reason": "文革派标签，需结合褒贬"
+    },
+    {
+      "meaning_label": "文革造反派与上海公社",
+      "stance": "左",
+      "score": 3.0,
+      "reason": "造反派/上海公社归左派"
+    },
+    {
+      "meaning_label": "毛泽东与毛主义",
+      "stance": "左",
+      "score": 3.2,
+      "reason": "毛主义归左派"
+    },
+    {
+      "meaning_label": "毛泽东隐晦指代",
+      "stance": "左",
+      "score": 3.2,
+      "reason": "毛泽东代称归左派"
+    },
+    {
+      "meaning_label": "奥威尔式威权批判",
+      "stance": "神",
+      "score": 3.4,
+      "reason": "1984/真理部等归自由派立场"
+    },
+    {
+      "meaning_label": "皇汉民族主义",
+      "stance": "皇",
+      "score": 3.5,
+      "reason": "满清/大明/朱元璋等皇汉语境"
+    },
+    {
+      "meaning_label": "反满清与皇汉叙事",
+      "stance": "皇",
+      "score": 3.2,
+      "reason": "反满清/孙殿英等归皇汉"
+    },
+    {
+      "meaning_label": "明清易代创伤叙事",
+      "stance": "皇",
+      "score": 3.0,
+      "reason": "明清易代创伤叙事归皇汉"
+    },
+    {
+      "meaning_label": "建制发展主义",
+      "stance": "兔",
+      "score": 3.0,
+      "reason": "大国/中国制造/强国发展归建制派"
+    },
+    {
+      "meaning_label": "建制进步叙事",
+      "stance": "兔",
+      "score": 2.8,
+      "reason": "用户指定：进步归建制派"
+    },
+    {
+      "meaning_label": "改革开放与发展主义",
+      "stance": "兔",
+      "score": 3.1,
+      "reason": "邓小平发展主义归建制派"
+    },
+    {
+      "meaning_label": "邓小平与改革开放",
+      "stance": "兔",
+      "score": 2.9,
+      "reason": "邓小平/改开路线归建制派"
+    },
+    {
+      "meaning_label": "邓小平隐晦指代",
+      "stance": "兔",
+      "score": 2.6,
+      "reason": "用户指定代称，可能带讽刺需复核"
+    },
+    {
+      "meaning_label": "古典文学政治寄托",
+      "stance": "左",
+      "score": 1.8,
+      "reason": "香草美人式政治抒情弱归左派，保留低权重"
+    },
+    {
+      "meaning_label": "改革开放",
+      "stance": "兔",
+      "score": 2.2,
+      "reason": "默认按支持改开/特色路线处理，若评论反讽可由AI复核覆盖"
+    },
+    {
+      "meaning_label": "市场化改革",
+      "stance": "兔",
+      "score": 1.8,
+      "reason": "发展主义/改开语境弱映射"
+    },
+    {
+      "meaning_label": "市场化改革争议",
+      "stance": "左",
+      "score": 2.2,
+      "reason": "反市场化批评更偏左"
+    },
+    {
+      "meaning_label": "文化大革命",
+      "stance": "左",
+      "score": 1.6,
+      "reason": "文革本身中性，低权重，需语境"
+    },
+    {
+      "meaning_label": "人民公社",
+      "stance": "左",
+      "score": 2.3,
+      "reason": "毛时代集体化制度符号"
+    },
+    {
+      "meaning_label": "大跃进",
+      "stance": "左",
+      "score": 1.4,
+      "reason": "历史事件低权重，避免误判批判语境"
+    },
+    {
+      "meaning_label": "阶级斗争叙事",
+      "stance": "左",
+      "score": 2.9,
+      "reason": "左翼核心叙事"
+    },
+    {
+      "meaning_label": "公有制与再分配",
+      "stance": "左",
+      "score": 2.8,
+      "reason": "左翼经济诉求"
+    },
+    {
+      "meaning_label": "贫富分化",
+      "stance": "左",
+      "score": 2.0,
+      "reason": "阶层批判线索"
+    },
+    {
+      "meaning_label": "劳动者叙事",
+      "stance": "左",
+      "score": 1.8,
+      "reason": "劳动者/阶层语境"
+    },
+    {
+      "meaning_label": "自由主义",
+      "stance": "神",
+      "score": 2.2,
+      "reason": "自由派价值取向"
+    },
+    {
+      "meaning_label": "自由民主",
+      "stance": "神",
+      "score": 2.4,
+      "reason": "自由民主价值取向"
+    },
+    {
+      "meaning_label": "宪政法治",
+      "stance": "神",
+      "score": 2.5,
+      "reason": "自由派制度取向"
+    },
+    {
+      "meaning_label": "政治体制改革",
+      "stance": "神",
+      "score": 2.7,
+      "reason": "自由派/改革派制度诉求"
+    },
+    {
+      "meaning_label": "神友反建制",
+      "stance": "神",
+      "score": 3.5,
+      "reason": "明确神友标签"
+    },
+    {
+      "meaning_label": "逆向民族主义",
+      "stance": "神",
+      "score": 3.0,
+      "reason": "神友/反民族主义语境"
+    },
+    {
+      "meaning_label": "反建制",
+      "stance": "神",
+      "score": 2.6,
+      "reason": "反建制语境"
+    },
+    {
+      "meaning_label": "移民逃离叙事",
+      "stance": "神",
+      "score": 2.2,
+      "reason": "润学/逃离语境"
+    },
+    {
+      "meaning_label": "兔友建制民族主义",
+      "stance": "兔",
+      "score": 3.5,
+      "reason": "明确兔友标签"
+    },
+    {
+      "meaning_label": "网络民族主义",
+      "stance": "兔",
+      "score": 2.8,
+      "reason": "粉红/兔友语境"
+    },
+    {
+      "meaning_label": "建制派",
+      "stance": "兔",
+      "score": 3.0,
+      "reason": "建制支持"
+    },
+    {
+      "meaning_label": "国家复兴",
+      "stance": "兔",
+      "score": 2.4,
+      "reason": "国家复兴叙事"
+    },
+    {
+      "meaning_label": "大国竞争叙事",
+      "stance": "兔",
+      "score": 2.6,
+      "reason": "大国竞争/发展主义语境"
+    },
+    {
+      "meaning_label": "工业党发展主义",
+      "stance": "兔",
+      "score": 2.4,
+      "reason": "发展主义/工业主义"
+    },
+    {
+      "meaning_label": "入关学",
+      "stance": "兔",
+      "score": 2.5,
+      "reason": "大国竞争隐喻"
+    },
+    {
+      "meaning_label": "皇汉民族主义",
+      "stance": "皇",
+      "score": 3.6,
+      "reason": "明确皇汉标签"
+    },
+    {
+      "meaning_label": "华夷之辨",
+      "stance": "皇",
+      "score": 3.0,
+      "reason": "文明边界叙事"
+    },
+    {
+      "meaning_label": "血缘民族主义",
+      "stance": "皇",
+      "score": 3.0,
+      "reason": "血缘身份取向"
+    },
+    {
+      "meaning_label": "文化民族主义",
+      "stance": "皇",
+      "score": 2.2,
+      "reason": "文化民族主义线索"
+    },
+    {
+      "meaning_label": "文化保守主义",
+      "stance": "皇",
+      "score": 2.5,
+      "reason": "文化保守线索"
+    },
+    {
+      "meaning_label": "传统礼法",
+      "stance": "皇",
+      "score": 2.6,
+      "reason": "礼法保守取向"
+    },
+    {
+      "meaning_label": "宗法礼制",
+      "stance": "皇",
+      "score": 2.7,
+      "reason": "宗法礼制取向"
+    },
+    {
+      "meaning_label": "大一统叙事",
+      "stance": "皇",
+      "score": 2.4,
+      "reason": "大一统/秩序取向"
+    },
+    {
+      "meaning_label": "政治玩梗与冷感",
+      "stance": "乐子人",
+      "score": 4.0,
+      "reason": "明确玩梗/低严肃立场"
+    },
+    {
+      "meaning_label": "政治冷感",
+      "stance": "乐子人",
+      "score": 3.5,
+      "reason": "政治冷感/日子人"
+    },
+    {
+      "meaning_label": "加速主义",
+      "stance": "乐子人",
+      "score": 1.8,
+      "reason": "常混合玩梗和反建制，低权重交给AI复核"
+    },
+    {
+      "meaning_label": "社会崩坏叙事",
+      "stance": "乐子人",
+      "score": 1.8,
+      "reason": "可能为黑色幽默/犬儒，低权重"
+    }
+  ]
+}

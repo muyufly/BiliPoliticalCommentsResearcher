@@ -1,0 +1,21 @@
+{
+  "rules": [
+    {
+      "rule_id": "mao_poem_four_seas_five_continents",
+      "terms": [
+        "四海",
+        "五洲",
+        "风雷"
+      ],
+      "window": "adjacent_segments",
+      "semantic_category": "政治路线",
+      "meaning_label": "毛泽东诗词政治隐喻",
+      "semantic_weight": 4.0,
+      "stance": "左",
+      "stance_score": 4.0,
+      "confidence": 0.97,
+      "reason": "四海/五洲/风雷共现时按毛泽东《满江红·和郭沫若同志》拆分互文处理",
+      "enabled": true
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "bilibili_cookie": "",
+  "ai_provider": "google",
+  "openai": {
+    "base_url": "",
+    "api_key": "",
+    "model": "gpt-4o-mini"
+  },
+  "google": {
+    "api_key": "",
+    "model": "gemini-2.5-flash"
+  }
+}
