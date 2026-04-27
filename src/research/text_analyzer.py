@@ -51,6 +51,45 @@ STANCE_ORDER_TEXT = ["神", "左", "兔", "皇", "乐子人"]
 DEFAULT_COMPOSITE_OVERRIDES = {
     "rules": [
         {
+            "rule_id": "left_world_people_grand_unity",
+            "terms": ["世界", "人民", "大团结"],
+            "window": "same_segment",
+            "semantic_category": "政治路线",
+            "meaning_label": "国际主义动员",
+            "semantic_weight": 4.2,
+            "stance": "左",
+            "stance_score": 4.0,
+            "confidence": 0.98,
+            "reason": "世界/人民/大团结共现时按左派国际主义口号处理",
+            "enabled": True,
+        },
+        {
+            "rule_id": "left_world_people_unite",
+            "terms": ["世界", "人民", "联合起来"],
+            "window": "adjacent_segments",
+            "semantic_category": "政治路线",
+            "meaning_label": "国际主义动员",
+            "semantic_weight": 4.3,
+            "stance": "左",
+            "stance_score": 4.1,
+            "confidence": 0.98,
+            "reason": "世界/人民/联合起来共现时按左派国际主义口号处理",
+            "enabled": True,
+        },
+        {
+            "rule_id": "left_world_proletarian_unity",
+            "terms": ["世界", "无产者", "联合起来"],
+            "window": "adjacent_segments",
+            "semantic_category": "政治路线",
+            "meaning_label": "国际主义动员",
+            "semantic_weight": 4.5,
+            "stance": "左",
+            "stance_score": 4.2,
+            "confidence": 0.99,
+            "reason": "世界/无产者/联合起来共现时按国际主义动员处理",
+            "enabled": True,
+        },
+        {
             "rule_id": "mao_poem_four_seas_five_continents",
             "terms": ["四海", "五洲", "风雷"],
             "window": "adjacent_segments",
@@ -75,6 +114,10 @@ AMBIGUOUS_ALIAS_CONTEXTS: Dict[str, List[str]] = {
     "小王": ["王洪文", "四人帮", "接班人", "上海", "工总司", "文革", "张春桥", "江青", "姚文元"],
     "年轻人": ["王洪文", "四人帮", "接班人", "上海", "工总司", "文革", "张春桥", "江青", "姚文元"],
     "小崔": ["王洪文", "四人帮", "接班人", "上海", "工总司", "文革", "张春桥", "江青", "姚文元"],
+    "发展": ["中国", "国家", "大国", "强国", "复兴", "特色", "改开", "改革开放", "现代化", "中国制造", "稳定"],
+    "崛起": ["中国", "国家", "大国", "强国", "复兴", "民族复兴", "中华", "东升西降", "国运"],
+    "民族主义": ["皇汉", "华夷", "汉家", "汉统", "满清", "反清复明", "驱逐鞑虏", "尊王攘夷", "大一统", "正统", "华夏"],
+    "加速": ["神友", "浪人", "冲浪里", "神奈冲", "神奈川冲浪里", "何意味", "总加速师", "加速主义"],
 }
 
 
@@ -163,6 +206,13 @@ def _term_metadata(
             "semantic_category": best.get("category", ""),
             "meaning_label": best.get("meaning", ""),
             "semantic_weight": float(best.get("weight", 1.0) or 1.0),
+            "context_required": all(bool(item.get("context_required", False)) for item in meanings),
+            "context_terms": sorted({
+                str(context).strip()
+                for item in meanings
+                for context in item.get("context_terms", []) or []
+                if str(context).strip()
+            }),
             "sources": sorted({str(item.get("source", "seed")) for item in meanings}),
         }
 
@@ -181,6 +231,17 @@ def _term_metadata(
         })
         terms[term]["stance"] = str(item.get("stance", "")).strip()
         terms[term]["stance_score"] = float(item.get("score", 2.0) or 2.0)
+        if bool(item.get("context_required", False)):
+            terms[term]["context_required"] = True
+        item_contexts = [
+            str(context).strip()
+            for context in item.get("context_terms", []) or []
+            if str(context).strip()
+        ]
+        if item_contexts:
+            merged_contexts = set(terms[term].get("context_terms", []) or [])
+            merged_contexts.update(item_contexts)
+            terms[term]["context_terms"] = sorted(merged_contexts)
     return terms
 
 
@@ -202,6 +263,8 @@ def _match_term_in_segment(
     term: str,
     enable_fuzzy: bool,
     pinyin_cache: Dict[str, str],
+    force_review: bool = False,
+    context_terms: Optional[List[str]] = None,
 ) -> List[Dict[str, object]]:
     compact_segment = _compact_text(segment)
     compact_term = _compact_text(term)
@@ -210,13 +273,20 @@ def _match_term_in_segment(
 
     matches: List[Dict[str, object]] = []
     if compact_term in compact_segment:
-        ambiguous = _ambiguous_without_context(segment, term)
+        ambiguous = _ambiguous_without_context(
+            segment,
+            term,
+            force_review=force_review,
+            context_terms=context_terms,
+        )
         matches.append({
             "matched_text": term,
             "match_method": "exact",
             "confidence": 0.62 if ambiguous else 1.0,
             "needs_review": ambiguous,
-            "reason": "ambiguous alias without context" if ambiguous else "exact substring",
+            "reason": "context-required term needs composite evidence" if force_review else (
+                "ambiguous alias without context" if ambiguous else "exact substring"
+            ),
         })
         return matches
 
@@ -265,12 +335,23 @@ def _match_term_in_segment(
     return sorted(matches, key=lambda item: float(item["confidence"]), reverse=True)[:2]
 
 
-def _ambiguous_without_context(segment: str, term: str) -> bool:
-    contexts = AMBIGUOUS_ALIAS_CONTEXTS.get(term)
+def _ambiguous_without_context(
+    segment: str,
+    term: str,
+    force_review: bool = False,
+    context_terms: Optional[List[str]] = None,
+) -> bool:
+    contexts = list(AMBIGUOUS_ALIAS_CONTEXTS.get(term, []))
+    contexts.extend(
+        str(context).strip()
+        for context in (context_terms or [])
+        if str(context).strip()
+    )
     if not contexts:
-        return False
+        return bool(force_review)
     compact_segment = _compact_text(segment)
-    return not any(_compact_text(context) in compact_segment for context in contexts if context != term)
+    has_context = any(_compact_text(context) in compact_segment for context in contexts if context != term)
+    return bool(force_review and not has_context) or not has_context
 
 
 def fuzzy_match_text(
@@ -288,8 +369,15 @@ def fuzzy_match_text(
         for term in terms:
             if len(_compact_text(term)) > max(2, len(_compact_text(segment))):
                 continue
-            for match in _match_term_in_segment(segment, term, enable_fuzzy, pinyin_cache):
-                meta = term_map[term]
+            meta = term_map[term]
+            for match in _match_term_in_segment(
+                segment,
+                term,
+                enable_fuzzy,
+                pinyin_cache,
+                force_review=bool(meta.get("context_required", False)),
+                context_terms=meta.get("context_terms", []),
+            ):
                 row = {
                     "segment_id": f"text_{idx:03d}",
                     "segment": segment,

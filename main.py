@@ -1,5 +1,5 @@
 """
-BiliPoliticalCommentsResercher (BPCR) - 主程序入口
+BiliPoliticalCommentsResearcher (BPCR) - 主程序入口
 """
 import sys
 import os

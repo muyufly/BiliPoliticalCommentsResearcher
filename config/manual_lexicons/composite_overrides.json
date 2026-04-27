@@ -1,6 +1,57 @@
 {
   "rules": [
     {
+      "rule_id": "left_world_people_grand_unity",
+      "terms": [
+        "世界",
+        "人民",
+        "大团结"
+      ],
+      "window": "same_segment",
+      "semantic_category": "政治路线",
+      "meaning_label": "国际主义动员",
+      "semantic_weight": 4.2,
+      "stance": "左",
+      "stance_score": 4.0,
+      "confidence": 0.98,
+      "reason": "世界/人民/大团结共现时按左派国际主义口号处理",
+      "enabled": true
+    },
+    {
+      "rule_id": "left_world_people_unite",
+      "terms": [
+        "世界",
+        "人民",
+        "联合起来"
+      ],
+      "window": "adjacent_segments",
+      "semantic_category": "政治路线",
+      "meaning_label": "国际主义动员",
+      "semantic_weight": 4.3,
+      "stance": "左",
+      "stance_score": 4.1,
+      "confidence": 0.98,
+      "reason": "世界/人民/联合起来共现时按左派国际主义口号处理",
+      "enabled": true
+    },
+    {
+      "rule_id": "left_world_proletarian_unity",
+      "terms": [
+        "世界",
+        "无产者",
+        "联合起来"
+      ],
+      "window": "adjacent_segments",
+      "semantic_category": "政治路线",
+      "meaning_label": "国际主义动员",
+      "semantic_weight": 4.5,
+      "stance": "左",
+      "stance_score": 4.2,
+      "confidence": 0.99,
+      "reason": "世界/无产者/联合起来共现时按国际主义动员处理",
+      "enabled": true
+    },
+    {
       "rule_id": "mao_poem_four_seas_five_continents",
       "terms": [
         "四海",

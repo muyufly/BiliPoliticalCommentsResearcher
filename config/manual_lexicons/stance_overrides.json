@@ -1120,7 +1120,9 @@
       "term": "崛起",
       "stance": "兔",
       "score": 2.2,
-      "reason": "国家发展叙事"
+      "reason": "国家发展叙事，需结合大国/中国/复兴等语境",
+      "context_required": true,
+      "context_terms": ["中国", "国家", "大国", "强国", "复兴", "民族复兴", "中华", "东升西降", "国运"]
     },
     {
       "term": "东升西降",
@@ -1174,7 +1176,9 @@
       "term": "发展",
       "stance": "兔",
       "score": 1.4,
-      "reason": "发展叙事，弱线索"
+      "reason": "发展叙事，弱线索，需结合国家发展语境",
+      "context_required": true,
+      "context_terms": ["中国", "国家", "大国", "强国", "复兴", "特色", "改开", "改革开放", "现代化", "中国制造", "稳定"]
     },
     {
       "term": "皇汉",
@@ -1192,7 +1196,9 @@
       "term": "民族主义",
       "stance": "皇",
       "score": 2.5,
-      "reason": "民族主义线索，兔/皇需语境"
+      "reason": "民族主义线索，必须结合皇汉/华夷等语境",
+      "context_required": true,
+      "context_terms": ["皇汉", "华夷", "汉家", "汉统", "满清", "反清复明", "驱逐鞑虏", "尊王攘夷", "大一统", "正统", "华夏"]
     },
     {
       "term": "汉家",
@@ -1333,6 +1339,258 @@
       "reason": "文化民族主义弱线索，需语境"
     },
     {
+      "term": "神友",
+      "stance": "神",
+      "score": 3.9,
+      "reason": "公开贴吧语境中的直接自/他称"
+    },
+    {
+      "term": "神神",
+      "stance": "神",
+      "score": 3.6,
+      "reason": "朴吧/口吧语境中的元标签"
+    },
+    {
+      "term": "神系",
+      "stance": "神",
+      "score": 3.6,
+      "reason": "贴吧成分讨论常用集合称呼"
+    },
+    {
+      "term": "神吧",
+      "stance": "神",
+      "score": 3.4,
+      "reason": "神系贴吧简称"
+    },
+    {
+      "term": "神奈川冲浪里",
+      "stance": "神",
+      "score": 3.9,
+      "reason": "神友起源吧名核心指称"
+    },
+    {
+      "term": "神奈川冲浪里吧",
+      "stance": "神",
+      "score": 4.1,
+      "reason": "神友起源吧名直接指称"
+    },
+    {
+      "term": "浪友",
+      "stance": "神",
+      "score": 3.0,
+      "reason": "与神系高度重合的自称，保守加权"
+    },
+    {
+      "term": "浪人",
+      "stance": "神",
+      "score": 2.8,
+      "reason": "神系/浪系常见自称，低于神友"
+    },
+    {
+      "term": "兔友",
+      "stance": "兔",
+      "score": 4.0,
+      "reason": "公开语境中的直接自/他称"
+    },
+    {
+      "term": "兔兔",
+      "stance": "兔",
+      "score": 2.8,
+      "reason": "朴吧/口吧语境中的元标签"
+    },
+    {
+      "term": "兔系",
+      "stance": "兔",
+      "score": 3.0,
+      "reason": "贴吧成分讨论常用集合称呼"
+    },
+    {
+      "term": "那兔",
+      "stance": "兔",
+      "score": 3.6,
+      "reason": "《那年那兔那些事儿》简称"
+    },
+    {
+      "term": "那年那兔那些事儿",
+      "stance": "兔",
+      "score": 4.0,
+      "reason": "兔友主要起源作品与吧名"
+    },
+    {
+      "term": "种花家",
+      "stance": "兔",
+      "score": 3.5,
+      "reason": "那兔体系国家拟人黑话"
+    },
+    {
+      "term": "我兔",
+      "stance": "兔",
+      "score": 2.9,
+      "reason": "那兔体系自称"
+    },
+    {
+      "term": "大国梦",
+      "stance": "兔",
+      "score": 3.4,
+      "reason": "那兔体系常见国家复兴表达"
+    },
+    {
+      "term": "星辰大海",
+      "stance": "兔",
+      "score": 3.1,
+      "reason": "那兔体系常见国家复兴表达"
+    },
+    {
+      "term": "一盘大棋",
+      "stance": "兔",
+      "score": 2.9,
+      "reason": "那兔体系政治博弈黑话"
+    },
+    {
+      "term": "航吧",
+      "stance": "兔",
+      "score": 3.0,
+      "reason": "公开贴吧语境中常与兔友并称"
+    },
+    {
+      "term": "航友",
+      "stance": "兔",
+      "score": 3.1,
+      "reason": "航吧用户称呼，常与兔友重合"
+    },
+    {
+      "term": "航空母舰吧",
+      "stance": "兔",
+      "score": 3.4,
+      "reason": "航吧直接指称，兔系重合明显"
+    },
+    {
+      "term": "帝吧出征",
+      "stance": "兔",
+      "score": 3.1,
+      "reason": "建制民族主义动员语境"
+    },
+    {
+      "term": "帝吧",
+      "stance": "兔",
+      "score": 2.2,
+      "reason": "立场多变，保留低权重"
+    },
+    {
+      "term": "皇汉",
+      "stance": "皇",
+      "score": 4.2,
+      "reason": "公开语境中的直接自/他称"
+    },
+    {
+      "term": "黄汉",
+      "stance": "皇",
+      "score": 4.0,
+      "reason": "皇汉常见异写"
+    },
+    {
+      "term": "汉皇",
+      "stance": "皇",
+      "score": 3.8,
+      "reason": "贴吧相关吧名与自称变体"
+    },
+    {
+      "term": "皇汉吧",
+      "stance": "皇",
+      "score": 4.2,
+      "reason": "皇汉主要聚集吧名"
+    },
+    {
+      "term": "汉皇吧",
+      "stance": "皇",
+      "score": 4.0,
+      "reason": "贴吧相关聚集吧名"
+    },
+    {
+      "term": "明粉",
+      "stance": "皇",
+      "score": 3.6,
+      "reason": "贴吧语境中常与皇汉重合"
+    },
+    {
+      "term": "满清",
+      "stance": "皇",
+      "score": 3.1,
+      "reason": "皇汉语境中的高频负面指称"
+    },
+    {
+      "term": "螨清",
+      "stance": "皇",
+      "score": 3.9,
+      "reason": "极化蔑称，指向性强"
+    },
+    {
+      "term": "鞑清",
+      "stance": "皇",
+      "score": 3.9,
+      "reason": "反清民族主义蔑称"
+    },
+    {
+      "term": "反清复明",
+      "stance": "皇",
+      "score": 3.7,
+      "reason": "皇汉历史叙事母题"
+    },
+    {
+      "term": "驱逐鞑虏",
+      "stance": "皇",
+      "score": 3.5,
+      "reason": "反清民族主义口号"
+    },
+    {
+      "term": "剃发易服",
+      "stance": "皇",
+      "score": 2.8,
+      "reason": "皇汉历史记忆高频事件"
+    },
+    {
+      "term": "扬州十日",
+      "stance": "皇",
+      "score": 2.8,
+      "reason": "皇汉历史记忆高频事件"
+    },
+    {
+      "term": "嘉定三屠",
+      "stance": "皇",
+      "score": 2.8,
+      "reason": "皇汉历史记忆高频事件"
+    },
+    {
+      "term": "朱元璋",
+      "stance": "皇",
+      "score": 2.2,
+      "reason": "皇汉/明粉常借人物表态，低权重"
+    },
+    {
+      "term": "洪武大帝",
+      "stance": "皇",
+      "score": 2.8,
+      "reason": "明粉赞颂语境"
+    },
+    {
+      "term": "明太祖",
+      "stance": "皇",
+      "score": 2.4,
+      "reason": "明粉赞颂语境，低权重"
+    },
+    {
+      "term": "孙笑川吧",
+      "stance": "乐子人",
+      "score": 1.8,
+      "reason": "按用户校正作为抽象/乐子语境低权重处理，不直接判神"
+    },
+    {
+      "term": "孙吧",
+      "stance": "乐子人",
+      "score": 1.6,
+      "reason": "按用户校正作为抽象/乐子语境低权重处理，不直接判神"
+    },
+    {
       "term": "乐子人",
       "stance": "乐子人",
       "score": 4.0,
@@ -1385,6 +1643,332 @@
       "stance": "乐子人",
       "score": 2.2,
       "reason": "玩梗/黑色幽默语境"
+    },
+    {
+      "term": "旺座",
+      "stance": "左",
+      "score": 3.2,
+      "reason": "网左吧等语境中的谐写自称"
+    },
+    {
+      "term": "往左",
+      "stance": "左",
+      "score": 2.8,
+      "reason": "网左/旺座变体写法"
+    },
+    {
+      "term": "康米",
+      "stance": "左",
+      "score": 3.2,
+      "reason": "communist 谐译的网络左翼自称"
+    },
+    {
+      "term": "实左",
+      "stance": "左",
+      "score": 3.0,
+      "reason": "贴吧圈层中的左翼细分自称"
+    },
+    {
+      "term": "少左",
+      "stance": "左",
+      "score": 2.6,
+      "reason": "网左吧等级/自称语境，低于明确理论词"
+    },
+    {
+      "term": "少徒",
+      "stance": "左",
+      "score": 2.6,
+      "reason": "网左吧等级/自称语境"
+    },
+    {
+      "term": "大徒",
+      "stance": "左",
+      "score": 2.5,
+      "reason": "网左吧等级/自称语境"
+    },
+    {
+      "term": "远视主义",
+      "stance": "左",
+      "score": 2.9,
+      "reason": "网左吧公开讨论中出现的自我定位"
+    },
+    {
+      "term": "精苏",
+      "stance": "左",
+      "score": 2.3,
+      "reason": "社会主义阵营怀旧与苏联情结，需结合语境"
+    },
+    {
+      "term": "马列",
+      "stance": "左",
+      "score": 3.3,
+      "reason": "马列理论学习标签"
+    },
+    {
+      "term": "马列毛",
+      "stance": "左",
+      "score": 3.5,
+      "reason": "马列毛理论学习标签"
+    },
+    {
+      "term": "马列毛主义",
+      "stance": "左",
+      "score": 3.5,
+      "reason": "马列毛理论学习标签"
+    },
+    {
+      "term": "毛选",
+      "stance": "左",
+      "score": 3.4,
+      "reason": "《毛泽东选集》简称"
+    },
+    {
+      "term": "毛泽东选集",
+      "stance": "左",
+      "score": 3.4,
+      "reason": "毛泽东理论学习文本"
+    },
+    {
+      "term": "资本论",
+      "stance": "左",
+      "score": 3.3,
+      "reason": "马克思主义理论学习文本"
+    },
+    {
+      "term": "人民史观",
+      "stance": "左",
+      "score": 3.1,
+      "reason": "以人民和阶级为主体的历史观"
+    },
+    {
+      "term": "阶级史观",
+      "stance": "左",
+      "score": 3.2,
+      "reason": "左翼常用历史分析框架"
+    },
+    {
+      "term": "唯物史观",
+      "stance": "左",
+      "score": 3.1,
+      "reason": "马克思主义史观语汇"
+    },
+    {
+      "term": "历史唯物主义",
+      "stance": "左",
+      "score": 3.2,
+      "reason": "马克思主义哲学语汇"
+    },
+    {
+      "term": "无产阶级",
+      "stance": "左",
+      "score": 3.2,
+      "reason": "左翼核心阶级术语"
+    },
+    {
+      "term": "无产阶级专政",
+      "stance": "左",
+      "score": 3.5,
+      "reason": "马克思主义国家理论术语"
+    },
+    {
+      "term": "工人阶级",
+      "stance": "左",
+      "score": 3.0,
+      "reason": "阶级政治主体语汇"
+    },
+    {
+      "term": "劳动人民",
+      "stance": "左",
+      "score": 3.0,
+      "reason": "左翼群众主体语汇"
+    },
+    {
+      "term": "工农联盟",
+      "stance": "左",
+      "score": 3.1,
+      "reason": "革命与社会主义叙事中的主体联盟"
+    },
+    {
+      "term": "剩余价值",
+      "stance": "左",
+      "score": 3.0,
+      "reason": "马克思主义剥削理论术语"
+    },
+    {
+      "term": "走资派",
+      "stance": "左",
+      "score": 3.3,
+      "reason": "反修防修与反市场化批判术语"
+    },
+    {
+      "term": "走资",
+      "stance": "左",
+      "score": 3.1,
+      "reason": "走资本主义道路的简写批判"
+    },
+    {
+      "term": "走资本主义道路",
+      "stance": "左",
+      "score": 3.4,
+      "reason": "毛左/文革语境中的核心批判表达"
+    },
+    {
+      "term": "修正主义",
+      "stance": "左",
+      "score": 3.4,
+      "reason": "左翼反修话语中的核心术语"
+    },
+    {
+      "term": "反修",
+      "stance": "左",
+      "score": 3.2,
+      "reason": "反修防修简称"
+    },
+    {
+      "term": "防修",
+      "stance": "左",
+      "score": 3.2,
+      "reason": "反修防修简称"
+    },
+    {
+      "term": "反修防修",
+      "stance": "左",
+      "score": 3.5,
+      "reason": "文革与毛左语境高频组合"
+    },
+    {
+      "term": "资本主义复辟",
+      "stance": "左",
+      "score": 3.5,
+      "reason": "左翼对路线变化的核心批判表达"
+    },
+    {
+      "term": "复辟",
+      "stance": "左",
+      "score": 2.3,
+      "reason": "需与资本主义、走资、修正主义等共现判断"
+    },
+    {
+      "term": "官僚资产阶级",
+      "stance": "左",
+      "score": 3.3,
+      "reason": "左翼阶级批判术语"
+    },
+    {
+      "term": "官僚主义",
+      "stance": "左",
+      "score": 2.8,
+      "reason": "群众路线与阶级批判语境"
+    },
+    {
+      "term": "挂路灯",
+      "stance": "左",
+      "score": 2.0,
+      "reason": "资本家处刑梗，保留低权重并交由上下文复核"
+    },
+    {
+      "term": "种花家",
+      "stance": "兔",
+      "score": 3.4,
+      "reason": "那兔系国家拟人叙事"
+    },
+    {
+      "term": "我兔",
+      "stance": "兔",
+      "score": 3.2,
+      "reason": "那兔系自称国家拟人黑话"
+    },
+    {
+      "term": "大国重器",
+      "stance": "兔",
+      "score": 3.0,
+      "reason": "强军科技强国语境"
+    },
+    {
+      "term": "东风快递",
+      "stance": "兔",
+      "score": 3.1,
+      "reason": "军工强国与威慑叙事"
+    },
+    {
+      "term": "遥遥领先",
+      "stance": "兔",
+      "score": 1.8,
+      "reason": "强国语境常见口号，但泛化严重，低权重"
+    },
+    {
+      "term": "国运",
+      "stance": "兔",
+      "score": 2.4,
+      "reason": "国家竞争与发展成败叙事"
+    },
+    {
+      "term": "神奈冲浪里",
+      "stance": "神",
+      "score": 3.6,
+      "reason": "浪系/神系起源黑话"
+    },
+    {
+      "term": "冲浪里",
+      "stance": "神",
+      "score": 2.8,
+      "reason": "神奈川冲浪里缩写语境"
+    },
+    {
+      "term": "神奈冲",
+      "stance": "神",
+      "score": 2.8,
+      "reason": "神奈川冲浪里缩略说法"
+    },
+    {
+      "term": "何意味",
+      "stance": "神",
+      "score": 3.1,
+      "reason": "神友圈层黑话"
+    },
+    {
+      "term": "加速",
+      "stance": "神",
+      "score": 1.8,
+      "reason": "神系与乐子都常用，需结合浪系/加速主义语境",
+      "context_required": true,
+      "context_terms": ["神友", "浪人", "冲浪里", "神奈冲", "神奈川冲浪里", "何意味", "总加速师", "加速主义"]
+    },
+    {
+      "term": "尊王攘夷",
+      "stance": "皇",
+      "score": 3.0,
+      "reason": "华夷之辨与汉本位语境"
+    },
+    {
+      "term": "汉贼不两立",
+      "stance": "皇",
+      "score": 3.2,
+      "reason": "明粉/复明/汉本位叙事"
+    },
+    {
+      "term": "驱除胡虏",
+      "stance": "皇",
+      "score": 3.1,
+      "reason": "反清与汉本位民族主义口号"
+    },
+    {
+      "term": "汉统",
+      "stance": "皇",
+      "score": 2.9,
+      "reason": "汉家正统与华夷之辨语境"
+    },
+    {
+      "term": "朱重八",
+      "stance": "皇",
+      "score": 2.8,
+      "reason": "朱元璋民间称呼，常见于明粉叙事"
+    },
+    {
+      "term": "再造华夏",
+      "stance": "皇",
+      "score": 3.0,
+      "reason": "明粉/皇汉常见历史叙事"
     }
   ],
   "meaning_overrides": [
@@ -1587,6 +2171,48 @@
       "reason": "劳动者/阶层语境"
     },
     {
+      "meaning_label": "网络左派",
+      "stance": "左",
+      "score": 2.8,
+      "reason": "贴吧/知乎公共讨论中的网络左翼自我命名"
+    },
+    {
+      "meaning_label": "毛左",
+      "stance": "左",
+      "score": 3.3,
+      "reason": "毛左作为更明确的左翼派别标签"
+    },
+    {
+      "meaning_label": "马列毛理论学习",
+      "stance": "左",
+      "score": 3.3,
+      "reason": "毛选、资本论、马列毛等理论学习语境"
+    },
+    {
+      "meaning_label": "阶级分析与人民史观",
+      "stance": "左",
+      "score": 3.1,
+      "reason": "阶级史观、唯物史观、无产阶级等语汇"
+    },
+    {
+      "meaning_label": "反修防修与资本主义复辟",
+      "stance": "左",
+      "score": 3.4,
+      "reason": "修正主义、走资派、资本主义复辟等高强度左翼批判"
+    },
+    {
+      "meaning_label": "劳工剥削与阶层批判",
+      "stance": "左",
+      "score": 2.9,
+      "reason": "资本家、剩余价值、劳动人民等阶层批判语境"
+    },
+    {
+      "meaning_label": "社会主义阵营怀旧",
+      "stance": "左",
+      "score": 2.2,
+      "reason": "精苏等社会主义阵营怀旧线索"
+    },
+    {
       "meaning_label": "自由主义",
       "stance": "神",
       "score": 2.2,
@@ -1635,6 +2261,18 @@
       "reason": "润学/逃离语境"
     },
     {
+      "meaning_label": "浪系反建制黑话",
+      "stance": "神",
+      "score": 3.0,
+      "reason": "神奈冲浪里、何意味等圈层黑话"
+    },
+    {
+      "meaning_label": "加速主义",
+      "stance": "神",
+      "score": 2.2,
+      "reason": "神系中常见，但与乐子混用，保留中低权重"
+    },
+    {
       "meaning_label": "兔友建制民族主义",
       "stance": "兔",
       "score": 3.5,
@@ -1675,6 +2313,24 @@
       "stance": "兔",
       "score": 2.5,
       "reason": "大国竞争隐喻"
+    },
+    {
+      "meaning_label": "种花家国家拟人叙事",
+      "stance": "兔",
+      "score": 3.0,
+      "reason": "那兔系国家拟人表达"
+    },
+    {
+      "meaning_label": "强军科技强国叙事",
+      "stance": "兔",
+      "score": 3.1,
+      "reason": "航吧/军工/大国重器语境"
+    },
+    {
+      "meaning_label": "大战略建制叙事",
+      "stance": "兔",
+      "score": 2.7,
+      "reason": "一盘大棋、东升西降等大战略表达"
     },
     {
       "meaning_label": "皇汉民族主义",
@@ -1723,6 +2379,18 @@
       "stance": "皇",
       "score": 2.4,
       "reason": "大一统/秩序取向"
+    },
+    {
+      "meaning_label": "明粉复明叙事",
+      "stance": "皇",
+      "score": 3.0,
+      "reason": "大明、朱元璋、复明等叙事"
+    },
+    {
+      "meaning_label": "华夷之辨与汉本位",
+      "stance": "皇",
+      "score": 3.2,
+      "reason": "华夷之辨、尊王攘夷、汉统等语汇"
     },
     {
       "meaning_label": "政治玩梗与冷感",

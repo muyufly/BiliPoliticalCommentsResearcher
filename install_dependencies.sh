@@ -2,7 +2,7 @@
 
 echo ""
 echo "========================================"
-echo "  BiliPoliticalCommentsResercher (BPCR) - 依赖安装脚本"
+echo "  BiliPoliticalCommentsResearcher (BPCR) - 依赖安装脚本"
 echo "========================================"
 echo ""
 

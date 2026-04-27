@@ -1,2 +1,2 @@
-# BiliPoliticalCommentsResercher (BPCR)
+# BiliPoliticalCommentsResearcher (BPCR)
 

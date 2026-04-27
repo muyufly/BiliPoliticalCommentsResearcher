@@ -16,7 +16,11 @@ from config.user_config import load_user_config, save_user_config
 from src.crawler.comment_crawler import CommentCrawler
 from src.exporter.csv_exporter import CSVExporter
 from src.processor.data_processor import DataProcessor
-from src.research.deep_cleaning import create_summary_output_dir, run_deep_cleaning_summary
+from src.research.deep_cleaning import (
+    create_summary_output_dir,
+    run_deep_cleaning_backfill,
+    run_deep_cleaning_summary,
+)
 from src.research.text_analyzer import (
     analyze_text,
     apply_lexicon_candidates,
@@ -42,7 +46,7 @@ class MainWindow:
         init_theme()
         self.appearance = "light"
 
-        self.root.title("BiliPoliticalCommentsResercher (BPCR)")
+        self.root.title("BiliPoliticalCommentsResearcher (BPCR)")
         self.root.geometry("980x980")
         self.root.minsize(920, 820)
         self.root.configure(fg_color=Theme.BACKGROUND)
@@ -53,6 +57,7 @@ class MainWindow:
         self.crawler_thread: Optional[threading.Thread] = None
         self.research_thread: Optional[threading.Thread] = None
         self.summary_thread: Optional[threading.Thread] = None
+        self.backfill_thread: Optional[threading.Thread] = None
         self.text_analysis_thread: Optional[threading.Thread] = None
         self.is_crawling = False
         self.comments = []
@@ -99,7 +104,7 @@ class MainWindow:
         self._build_research_card(self.crawl_tab, row=2)
         self._build_actions(self.crawl_tab, row=3)
         self._build_text_validation_tab(self.text_tab)
-        self._build_summary_tab(self.summary_tab)
+        self._build_summary_tab_v2(self.summary_tab)
         self._build_stat_cards()
         self._build_log_console()
 
@@ -642,6 +647,120 @@ class MainWindow:
         )
         self.summary_status_label.grid(row=2, column=0, columnspan=2, sticky="w", padx=14, pady=(4, 14))
 
+    def _build_summary_tab_v2(self, parent):
+        parent.grid_columnconfigure(0, weight=1)
+        card = CardFrame(parent)
+        card.grid(row=0, column=0, sticky="we", padx=10, pady=6)
+        card.grid_columnconfigure(1, weight=1)
+        self._all_cards.append(card)
+
+        title = ctk.CTkLabel(card, text="汇总报告与回填", font=Theme.FONT_SECTION, text_color=Theme.TEXT_PRIMARY)
+        title.grid(row=0, column=0, columnspan=3, sticky="w", padx=14, pady=(12, 6))
+
+        label = ctk.CTkLabel(card, text="结果目录", text_color=Theme.TEXT_SECONDARY, font=Theme.FONT_NORMAL)
+        label.grid(row=1, column=0, sticky="w", padx=14, pady=8)
+        self.summary_result_root_var = ctk.StringVar(value="result")
+        self.summary_result_root_entry = ctk.CTkEntry(
+            card,
+            textvariable=self.summary_result_root_var,
+            fg_color=Theme.SURFACE,
+            border_color=Theme.BORDER,
+            text_color=Theme.TEXT_PRIMARY,
+            font=Theme.FONT_NORMAL,
+        )
+        self.summary_result_root_entry.grid(row=1, column=1, sticky="we", padx=8, pady=8)
+
+        self.summary_browse_button = ctk.CTkButton(
+            card,
+            text="选择目录",
+            width=96,
+            height=34,
+            corner_radius=Theme.RADIUS_BUTTON,
+            fg_color=Theme.ACCENT,
+            hover_color="#1f9bcb",
+            text_color="white",
+            command=self._browse_summary_result_root,
+        )
+        self.summary_browse_button.grid(row=1, column=2, sticky="e", padx=14, pady=8)
+
+        self.summary_ai_var = ctk.BooleanVar(value=False)
+        self.summary_ai_switch = ctk.CTkSwitch(
+            card,
+            text="启用 AI 复核",
+            variable=self.summary_ai_var,
+            onvalue=True,
+            offvalue=False,
+            fg_color=Theme.BORDER,
+            progress_color=Theme.PRIMARY,
+            text_color=Theme.TEXT_PRIMARY,
+            font=Theme.FONT_NORMAL,
+        )
+        self.summary_ai_switch.grid(row=2, column=0, sticky="w", padx=14, pady=8)
+
+        self.summary_backfill_var = ctk.BooleanVar(value=True)
+        self.summary_backfill_switch = ctk.CTkSwitch(
+            card,
+            text="先回填每首歌新版清洗结果",
+            variable=self.summary_backfill_var,
+            onvalue=True,
+            offvalue=False,
+            fg_color=Theme.BORDER,
+            progress_color=Theme.PRIMARY,
+            text_color=Theme.TEXT_PRIMARY,
+            font=Theme.FONT_NORMAL,
+        )
+        self.summary_backfill_switch.grid(row=2, column=1, sticky="w", padx=8, pady=8)
+
+        self.summary_hint_label = ctk.CTkLabel(
+            card,
+            text="回填会在每首歌目录下生成 deep_cleaning_v2/，不覆盖原始抓取和旧报告。",
+            text_color=Theme.TEXT_SECONDARY,
+            font=Theme.FONT_NORMAL,
+            justify="left",
+        )
+        self.summary_hint_label.grid(row=3, column=0, columnspan=3, sticky="w", padx=14, pady=(2, 8))
+
+        action_frame = ctk.CTkFrame(card, fg_color="transparent")
+        action_frame.grid(row=4, column=0, columnspan=3, sticky="e", padx=14, pady=(4, 10))
+
+        self.start_backfill_button = ctk.CTkButton(
+            action_frame,
+            text="回填单曲 + 生成汇总",
+            width=180,
+            height=36,
+            corner_radius=Theme.RADIUS_BUTTON,
+            fg_color=Theme.PRIMARY,
+            hover_color="#f25f88",
+            text_color="white",
+            font=("Microsoft YaHei UI", 13, "bold"),
+            command=self._start_backfill_summary,
+        )
+        self.start_backfill_button.pack(side="left", padx=(0, 8))
+
+        self.start_summary_button = ctk.CTkButton(
+            action_frame,
+            text="仅生成汇总",
+            width=140,
+            height=36,
+            corner_radius=Theme.RADIUS_BUTTON,
+            fg_color=Theme.ACCENT,
+            hover_color="#1f9bcb",
+            text_color="white",
+            font=("Microsoft YaHei UI", 13, "bold"),
+            command=self._start_deep_summary,
+        )
+        self.start_summary_button.pack(side="left")
+
+        self.summary_status_var = ctk.StringVar(value="尚未运行")
+        self.summary_status_label = ctk.CTkLabel(
+            card,
+            textvariable=self.summary_status_var,
+            text_color=Theme.TEXT_SECONDARY,
+            font=Theme.FONT_NORMAL,
+            justify="left",
+        )
+        self.summary_status_label.grid(row=5, column=0, columnspan=3, sticky="w", padx=14, pady=(2, 14))
+
     def _build_stat_cards(self):
         frame = ctk.CTkFrame(self.root, fg_color="transparent")
         frame.grid(row=2, column=0, sticky="we", padx=20, pady=4)
@@ -756,6 +875,10 @@ class MainWindow:
             lbl.configure(text_color=text_secondary)
         self.progress_label.configure(text_color=text_secondary)
         self.cookie_status_label.configure(text_color=text_secondary)
+        if hasattr(self, "summary_hint_label"):
+            self.summary_hint_label.configure(text_color=text_secondary)
+        if hasattr(self, "summary_status_label"):
+            self.summary_status_label.configure(text_color=text_secondary)
 
         # 输入框
         for entry in [
@@ -768,6 +891,12 @@ class MainWindow:
             self.path_entry,
         ]:
             entry.configure(
+                fg_color=surface,
+                border_color=border,
+                text_color=text_primary,
+            )
+        if hasattr(self, "summary_result_root_entry"):
+            self.summary_result_root_entry.configure(
                 fg_color=surface,
                 border_color=border,
                 text_color=text_primary,
@@ -803,6 +932,11 @@ class MainWindow:
         dirname = filedialog.askdirectory()
         if dirname:
             self.output_dir_var.set(dirname)
+
+    def _browse_summary_result_root(self):
+        dirname = filedialog.askdirectory()
+        if dirname:
+            self.summary_result_root_var.set(dirname)
 
     def _load_text_validation_file(self):
         path = filedialog.askopenfilename(
@@ -1246,6 +1380,8 @@ class MainWindow:
         self.start_button.configure(state="disabled", fg_color="#ccc")
         self.start_research_button.configure(state="disabled", fg_color=Theme.get("DISABLED_BG"))
         self.start_summary_button.configure(state="disabled", fg_color=Theme.get("DISABLED_BG"))
+        if hasattr(self, "start_backfill_button"):
+            self.start_backfill_button.configure(state="disabled", fg_color=Theme.get("DISABLED_BG"))
         self.stop_button.configure(
             state="normal",
             fg_color=Theme.DANGER,
@@ -1318,6 +1454,8 @@ class MainWindow:
         self.start_button.configure(state="disabled", fg_color=Theme.get("DISABLED_BG"))
         self.start_research_button.configure(state="disabled", fg_color=Theme.get("DISABLED_BG"))
         self.start_summary_button.configure(state="disabled", fg_color=Theme.get("DISABLED_BG"))
+        if hasattr(self, "start_backfill_button"):
+            self.start_backfill_button.configure(state="disabled", fg_color=Theme.get("DISABLED_BG"))
         self.stop_button.configure(
             state="normal",
             fg_color=Theme.DANGER,
@@ -1371,6 +1509,8 @@ class MainWindow:
         self.start_button.configure(state="disabled", fg_color=Theme.get("DISABLED_BG"))
         self.start_research_button.configure(state="disabled", fg_color=Theme.get("DISABLED_BG"))
         self.start_summary_button.configure(state="disabled", fg_color=Theme.get("DISABLED_BG"))
+        if hasattr(self, "start_backfill_button"):
+            self.start_backfill_button.configure(state="disabled", fg_color=Theme.get("DISABLED_BG"))
         self.stop_button.configure(
             state="disabled",
             fg_color=Theme.get("DISABLED_BG"),
@@ -1406,11 +1546,71 @@ class MainWindow:
         self.summary_thread = threading.Thread(target=summary_thread, daemon=True)
         self.summary_thread.start()
 
+    def _start_backfill_summary(self):
+        result_root = Path(self.summary_result_root_var.get().strip() or "result")
+        if not result_root.exists():
+            messagebox.showwarning("警告", "未找到 result 目录，无法进行回填与汇总")
+            return
+
+        enable_ai = self.summary_ai_var.get()
+        output_dir = create_summary_output_dir(result_root)
+
+        self.is_crawling = True
+        self.start_button.configure(state="disabled", fg_color=Theme.get("DISABLED_BG"))
+        self.start_research_button.configure(state="disabled", fg_color=Theme.get("DISABLED_BG"))
+        self.start_summary_button.configure(state="disabled", fg_color=Theme.get("DISABLED_BG"))
+        self.start_backfill_button.configure(state="disabled", fg_color=Theme.get("DISABLED_BG"))
+        self.stop_button.configure(
+            state="disabled",
+            fg_color=Theme.get("DISABLED_BG"),
+            hover_color=Theme.get("DISABLED_BG"),
+            text_color=Theme.get("DISABLED_FG"),
+        )
+        self.export_button.configure(
+            state="disabled",
+            fg_color=Theme.get("DISABLED_BG"),
+            text_color=Theme.get("DISABLED_FG"),
+        )
+
+        self.progress_bar.configure(mode="indeterminate")
+        self.progress_bar.start()
+        self.log_console.clear()
+        self.progress_var.set("正在回填每首歌的新版清洗结果，并生成新的 summary...")
+        self.summary_status_var.set("正在回填单曲并生成汇总...")
+        self._log(f"开始回填单曲并汇总: {result_root}")
+        self._log(f"summary 输出目录: {output_dir}")
+
+        def backfill_thread():
+            try:
+                backfill_result = run_deep_cleaning_backfill(
+                    result_root=result_root,
+                    enable_ai=enable_ai,
+                )
+                for song in backfill_result.get("songs", []):
+                    self._thread_safe_log(
+                        f"已回填: {Path(song.get('song_dir', '')).name} -> {song.get('output_dir', '')}"
+                    )
+                summary_result = run_deep_cleaning_summary(
+                    result_root=result_root,
+                    output_dir=output_dir,
+                    enable_ai=enable_ai,
+                )
+                summary_result["backfill_song_count"] = backfill_result.get("song_count", 0)
+                self.root.after(0, lambda: self._summary_finished(summary_result))
+            except Exception as e:
+                logger.error(f"回填与汇总异常: {e}", exc_info=True)
+                self.root.after(0, lambda: self._crawl_error(str(e)))
+
+        self.backfill_thread = threading.Thread(target=backfill_thread, daemon=True)
+        self.backfill_thread.start()
+
     def _crawl_finished(self, stats: dict):
         self.is_crawling = False
         self.start_button.configure(state="normal", fg_color=Theme.PRIMARY)
         self.start_research_button.configure(state="normal", fg_color=Theme.PRIMARY)
         self.start_summary_button.configure(state="normal", fg_color=Theme.ACCENT)
+        if hasattr(self, "start_backfill_button"):
+            self.start_backfill_button.configure(state="normal", fg_color=Theme.PRIMARY)
         self.stop_button.configure(
             state="disabled",
             fg_color=Theme.get("DISABLED_BG"),
@@ -1445,6 +1645,8 @@ class MainWindow:
         self.start_button.configure(state="normal", fg_color=Theme.PRIMARY)
         self.start_research_button.configure(state="normal", fg_color=Theme.PRIMARY)
         self.start_summary_button.configure(state="normal", fg_color=Theme.ACCENT)
+        if hasattr(self, "start_backfill_button"):
+            self.start_backfill_button.configure(state="normal", fg_color=Theme.PRIMARY)
         self.stop_button.configure(
             state="disabled",
             fg_color=Theme.get("DISABLED_BG"),
@@ -1475,6 +1677,8 @@ class MainWindow:
         self.start_button.configure(state="normal", fg_color=Theme.PRIMARY)
         self.start_research_button.configure(state="normal", fg_color=Theme.PRIMARY)
         self.start_summary_button.configure(state="normal", fg_color=Theme.ACCENT)
+        if hasattr(self, "start_backfill_button"):
+            self.start_backfill_button.configure(state="normal", fg_color=Theme.PRIMARY)
         self.stop_button.configure(
             state="disabled",
             fg_color=Theme.get("DISABLED_BG"),
@@ -1511,6 +1715,8 @@ class MainWindow:
         self.start_button.configure(state="normal", fg_color=Theme.PRIMARY)
         self.start_research_button.configure(state="normal", fg_color=Theme.PRIMARY)
         self.start_summary_button.configure(state="normal", fg_color=Theme.ACCENT)
+        if hasattr(self, "start_backfill_button"):
+            self.start_backfill_button.configure(state="normal", fg_color=Theme.PRIMARY)
         self.stop_button.configure(
             state="disabled",
             fg_color=Theme.get("DISABLED_BG"),

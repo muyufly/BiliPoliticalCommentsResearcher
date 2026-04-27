@@ -2,7 +2,7 @@
 chcp 65001 > nul
 echo.
 echo ========================================
-echo   BiliPoliticalCommentsResercher (BPCR) - 依赖安装脚本
+echo   BiliPoliticalCommentsResearcher (BPCR) - 依赖安装脚本
 echo ========================================
 echo.
 echo 正在检查 Python 环境...

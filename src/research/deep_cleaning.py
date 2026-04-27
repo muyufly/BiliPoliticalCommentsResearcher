@@ -28,6 +28,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 MANUAL_LEXICON_DIR = PROJECT_ROOT / "config" / "manual_lexicons"
 MANUAL_SEMANTIC_OVERRIDES_PATH = MANUAL_LEXICON_DIR / "semantic_overrides.json"
 MANUAL_STANCE_OVERRIDES_PATH = MANUAL_LEXICON_DIR / "stance_overrides.json"
+MANUAL_COMPOSITE_OVERRIDES_PATH = MANUAL_LEXICON_DIR / "composite_overrides.json"
 
 
 SEMANTIC_CATEGORY_ORDER = [
@@ -50,6 +51,54 @@ GENERIC_EXCLUDED_TERMS = {
     "古风", "歌曲", "音乐", "评论", "视频", "up", "UP", "b站", "弹幕", "作者", "up主",
     "姐姐", "哥哥", "老师", "姐妹", "兄弟", "小姐姐", "小哥哥", "角色", "画面", "剧情",
 }
+
+
+AMBIGUOUS_SEED_TERMS = {
+    "世界",
+    "天下",
+    "四海",
+    "五洲",
+    "万邦",
+    "万国",
+    "大同",
+    "丝路",
+    "民族主义",
+}
+
+CONTEXTUAL_MEANING_RULES = [
+    {
+        "rule_id": "left_world_people_unity",
+        "all_of": ["世界", "人民"],
+        "any_of": ["大团结", "联合起来", "万岁"],
+        "meaning_category": "政治路线",
+        "meaning_label": "国际主义动员",
+        "score": 4.4,
+    },
+    {
+        "rule_id": "left_world_proletarian_unity",
+        "all_of": ["世界", "无产者"],
+        "any_of": ["联合起来", "国际歌", "英特纳雄耐尔"],
+        "meaning_category": "政治路线",
+        "meaning_label": "国际主义动员",
+        "score": 4.6,
+    },
+    {
+        "rule_id": "mao_four_seas_five_continents",
+        "all_of": ["四海", "五洲"],
+        "any_of": ["风雷", "翻腾", "震荡", "换了人间"],
+        "meaning_category": "政治路线",
+        "meaning_label": "毛泽东诗词政治隐喻",
+        "score": 4.8,
+    },
+    {
+        "rule_id": "nation_tianxia_state_context",
+        "all_of": ["天下"],
+        "any_of": ["家国", "社稷", "江山", "兴亡", "苍生", "九州", "华夏", "中原", "山河", "故国"],
+        "meaning_category": "国家民族叙事",
+        "meaning_label": "家国叙事",
+        "score": 3.3,
+    },
+]
 
 
 SEMANTIC_ONTOLOGY_SEED: Dict[str, Dict[str, Dict[str, Iterable[str]]]] = {
@@ -109,7 +158,7 @@ SEMANTIC_ONTOLOGY_SEED: Dict[str, Dict[str, Dict[str, Iterable[str]]]] = {
             "weight": 2.6,
         },
         "民族主义": {
-            "terms": ["民族", "汉人", "汉家", "国族", "边疆", "正统", "国祚"],
+            "terms": ["民族主义", "汉人", "汉家", "国族", "边疆", "正统", "国祚"],
             "weight": 2.9,
         },
     },
@@ -158,14 +207,14 @@ STANCE_RULES = {
     },
     "左": {
         "terms": ["左派", "新左", "公社", "工农", "平均主义", "再分配", "计划", "文革", "毛左"],
-        "meanings": {"文化大革命", "新左与再分配", "革命动员", "民生与分配"},
+        "meanings": {"文化大革命", "新左与再分配", "革命动员", "民生与分配", "国际主义动员", "毛泽东诗词政治隐喻"},
         "axis_bonus": {
             "plan_market_net_score": 1.0,
             "progress_conservative_net_score": 0.5,
         },
     },
     "兔": {
-        "terms": ["复兴", "崛起", "强国", "特色", "改开", "改革开放", "建制", "发展", "稳定", "兔友"],
+        "terms": ["复兴", "强国", "特色", "改开", "改革开放", "建制", "稳定", "兔友"],
         "meanings": {"改革开放", "国家复兴", "家国叙事"},
         "axis_bonus": {
             "world_nation_net_score": -0.8,
@@ -173,7 +222,7 @@ STANCE_RULES = {
         },
     },
     "皇": {
-        "terms": ["皇汉", "民族主义", "保守", "大一统", "正统", "祖宗之法", "汉家", "秩序", "威权"],
+        "terms": ["皇汉", "保守", "大一统", "正统", "祖宗之法", "汉家", "秩序", "威权"],
         "meanings": {"民族主义", "中央集权", "传统礼教", "文明正统"},
         "axis_bonus": {
             "world_nation_net_score": -1.0,
@@ -236,6 +285,22 @@ def safe_slug(value: str) -> str:
     return value[:80] or "summary"
 
 
+def _compact_text(text: str) -> str:
+    return re.sub(r"[^\w\u4e00-\u9fff]+", "", str(text or "")).lower()
+
+
+def _has_context_terms(text: str, term: str, contexts: Optional[List[str]] = None) -> bool:
+    candidates = [
+        str(context).strip()
+        for context in (contexts or [])
+        if str(context).strip()
+    ]
+    if not candidates:
+        return term not in AMBIGUOUS_SEED_TERMS
+    compact = _compact_text(text)
+    return any(_compact_text(context) in compact for context in candidates if context != term)
+
+
 def _ensure_manual_lexicon_files():
     MANUAL_LEXICON_DIR.mkdir(parents=True, exist_ok=True)
     if not MANUAL_SEMANTIC_OVERRIDES_PATH.exists():
@@ -259,6 +324,12 @@ def _load_json_or_default(path: Path, default: Dict[str, object]) -> Dict[str, o
         return json.loads(json.dumps(default))
 
 
+def load_manual_composite_rules() -> List[Dict[str, object]]:
+    payload = _load_json_or_default(MANUAL_COMPOSITE_OVERRIDES_PATH, {"rules": []})
+    rules = payload.get("rules", [])
+    return [rule for rule in rules if isinstance(rule, dict)]
+
+
 def load_manual_lexicon_overrides() -> Dict[str, Dict[str, object]]:
     _ensure_manual_lexicon_files()
     return {
@@ -277,6 +348,8 @@ def _flatten_seed_terms() -> Dict[str, List[Dict[str, object]]]:
                     "category": category,
                     "meaning": meaning,
                     "weight": weight,
+                    "source": "seed",
+                    "context_required": str(term) in AMBIGUOUS_SEED_TERMS,
                 })
     return term_map
 
@@ -303,6 +376,12 @@ def build_effective_term_map(manual_semantic: Optional[Dict[str, object]] = None
             "meaning": meaning,
             "weight": float(item.get("weight", 2.8) or 2.8),
             "source": "manual_include",
+            "context_required": bool(item.get("context_required", False)),
+            "context_terms": [
+                str(context).strip()
+                for context in item.get("context_terms", []) or []
+                if str(context).strip()
+            ],
         })
 
     for item in manual_semantic.get("meaning_label_overrides", []):
@@ -318,6 +397,12 @@ def build_effective_term_map(manual_semantic: Optional[Dict[str, object]] = None
             "meaning": meaning,
             "weight": float(item.get("weight", 3.0) or 3.0),
             "source": "manual_override",
+            "context_required": bool(item.get("context_required", False)),
+            "context_terms": [
+                str(context).strip()
+                for context in item.get("context_terms", []) or []
+                if str(context).strip()
+            ],
         }]
     return term_map
 
@@ -408,6 +493,53 @@ def load_result_bundle(result_root: Path) -> Tuple[pd.DataFrame, Dict[str, pd.Da
         "ai_themes": pd.concat(theme_frames, ignore_index=True) if theme_frames else pd.DataFrame(),
     }
     return combined_comments, bundle
+
+
+def load_song_result_bundle(song_dir: Path) -> Tuple[pd.DataFrame, Dict[str, pd.DataFrame]]:
+    song_dir = Path(song_dir)
+    data_dir = song_dir / "data"
+    if not data_dir.exists():
+        return pd.DataFrame(), {}
+
+    song_key = song_dir.name
+    song_name = re.sub(r"_\d{8}_\d{6}$", "", song_key)
+    comments = _read_csv(data_dir / "comments_anonymized.csv")
+    word_frequency = _read_csv(data_dir / "word_frequency.csv")
+    political_comments = _read_csv(data_dir / "political_axis_comments.csv")
+    political_terms = _read_csv(data_dir / "political_axis_terms.csv")
+    ai_themes = _read_csv(data_dir / "ai_themes.csv")
+    tfidf = _read_csv(data_dir / "tfidf_keywords.csv")
+
+    if comments.empty:
+        return pd.DataFrame(), {}
+
+    comments = comments.copy()
+    comments["song_key"] = song_key
+    comments["song_name"] = song_name
+    if not political_comments.empty:
+        candidate_cols = [
+            col for col in political_comments.columns
+            if col not in {"content"} and (col == "comment_id" or col not in comments.columns)
+        ]
+        political_subset = political_comments.drop_duplicates(subset=["comment_id"])[candidate_cols]
+        comments = comments.merge(political_subset, on="comment_id", how="left")
+
+    bundle = {
+        "songs": pd.DataFrame([{
+            "song_key": song_key,
+            "song_name": song_name,
+            "comment_count": int(len(comments)),
+            "term_count": int(len(word_frequency)),
+            "political_term_count": int(len(political_terms)),
+            "theme_count": int(len(ai_themes)),
+            "source_dir": str(song_dir),
+        }]),
+        "word_frequency": word_frequency.assign(song_key=song_key, song_name=song_name) if not word_frequency.empty else pd.DataFrame(),
+        "political_terms": political_terms.assign(song_key=song_key, song_name=song_name) if not political_terms.empty else pd.DataFrame(),
+        "ai_themes": ai_themes.assign(song_key=song_key, song_name=song_name) if not ai_themes.empty else pd.DataFrame(),
+        "tfidf": tfidf,
+    }
+    return comments, bundle
 
 
 def _build_term_evidence(bundle: Dict[str, pd.DataFrame]) -> pd.DataFrame:
@@ -562,16 +694,26 @@ def semantic_clean_terms(
                 "reason": "generic_music_or_emotion_term",
             })
         elif term in effective_term_map:
-            categories = [item["category"] for item in effective_term_map[term]]
-            base.update({
-                "semantic_status": "keep",
-                "semantic_category": categories[0],
-                "decision_source": "manual_override" if any(
-                    str(item.get("source", "")).startswith("manual") for item in effective_term_map[term]
-                ) else "seed_ontology",
-                "confidence": 0.99,
-                "reason": "term_map_match",
-            })
+            matches = effective_term_map[term]
+            if all(bool(item.get("context_required", False)) for item in matches):
+                base.update({
+                    "semantic_status": "review",
+                    "semantic_category": "none",
+                    "decision_source": "rule",
+                    "confidence": 0.52,
+                    "reason": "ambiguous_seed_term_requires_context",
+                })
+            else:
+                categories = [item["category"] for item in matches]
+                base.update({
+                    "semantic_status": "keep",
+                    "semantic_category": categories[0],
+                    "decision_source": "manual_override" if any(
+                        str(item.get("source", "")).startswith("manual") for item in matches
+                    ) else "seed_ontology",
+                    "confidence": 0.99,
+                    "reason": "term_map_match",
+                })
         elif float(row.get("weighted_frequency", 0) or 0) > 0:
             base.update({
                 "semantic_status": "keep",
@@ -638,9 +780,33 @@ def _meaning_candidates_from_comment(
     tokens = tokenize(content)
     text = str(content or "")
     effective_term_map = effective_term_map or SEED_TERM_MAP
+    compact_text = _compact_text(text)
     scores: Dict[str, Dict[str, object]] = {}
+
+    for rule in CONTEXTUAL_MEANING_RULES:
+        all_of = [term for term in rule.get("all_of", []) if _compact_text(term)]
+        any_of = [term for term in rule.get("any_of", []) if _compact_text(term)]
+        if all_of and not all(_compact_text(term) in compact_text for term in all_of):
+            continue
+        if any_of and not any(_compact_text(term) in compact_text for term in any_of):
+            continue
+        item = scores.setdefault(rule["meaning_label"], {
+            "meaning_category": rule["meaning_category"],
+            "score": 0.0,
+            "matched_terms": set(),
+        })
+        item["score"] += float(rule["score"])
+        item["matched_terms"].update(all_of)
+        item["matched_terms"].update(term for term in any_of if _compact_text(term) in compact_text)
+
     for token in set(tokens):
         for match in effective_term_map.get(token, []):
+            if bool(match.get("context_required", False)) and not _has_context_terms(
+                text,
+                token,
+                match.get("context_terms", []),
+            ):
+                continue
             item = scores.setdefault(match["meaning"], {
                 "meaning_category": match["category"],
                 "score": 0.0,
@@ -651,6 +817,12 @@ def _meaning_candidates_from_comment(
     for term, matches in effective_term_map.items():
         if term in text and term not in tokens:
             for match in matches:
+                if bool(match.get("context_required", False)) and not _has_context_terms(
+                    text,
+                    term,
+                    match.get("context_terms", []),
+                ):
+                    continue
                 item = scores.setdefault(match["meaning"], {
                     "meaning_category": match["category"],
                     "score": 0.0,
@@ -847,6 +1019,12 @@ def _rule_stance_scores(
             if stance != "乐子人":
                 continue
         if term in tokens or term in content:
+            if bool(item.get("context_required", False)) and not _has_context_terms(
+                content,
+                term,
+                item.get("context_terms", []),
+            ):
+                continue
             if stance == "乐子人":
                 lezi_score += float(item.get("score", 2.2) or 2.2)
             else:
@@ -1067,6 +1245,91 @@ def build_song_level_summary(
     return summary.sort_values("song_name").reset_index(drop=True)
 
 
+def _split_composite_segments(text: str) -> List[str]:
+    values = [
+        segment.strip()
+        for segment in re.split(r"[\n\r。！？!?；;]+", str(text or ""))
+        if segment.strip()
+    ]
+    return values or [str(text or "").strip()]
+
+
+def build_composite_rule_summary(comments_df: pd.DataFrame) -> pd.DataFrame:
+    rules = [rule for rule in load_manual_composite_rules() if rule.get("enabled") is not False]
+    if not rules:
+        return pd.DataFrame(columns=[
+            "rule_id", "terms", "window", "semantic_category", "meaning_label",
+            "semantic_weight", "stance", "stance_score", "confidence",
+            "matched_comment_count", "matched_song_count", "share_of_comments_pct",
+            "reason",
+        ])
+
+    total_comments = int(len(comments_df)) if comments_df is not None else 0
+    rows = []
+    for rule in rules:
+        terms = [str(term).strip() for term in rule.get("terms", []) if str(term).strip()]
+        if len(terms) < 2:
+            continue
+        compact_terms = [_compact_text(term) for term in terms if _compact_text(term)]
+        if len(compact_terms) != len(terms):
+            continue
+        window = str(rule.get("window", "adjacent_segments") or "adjacent_segments")
+        matched_comments = 0
+        matched_song_keys = set()
+
+        for _, comment in comments_df.iterrows():
+            content = str(comment.get("content", "") or "")
+            if not content.strip():
+                continue
+            segments = _split_composite_segments(content)
+            if window == "full_text":
+                candidate_windows = [content]
+            elif window == "same_segment":
+                candidate_windows = segments
+            else:
+                candidate_windows = []
+                for idx, segment in enumerate(segments):
+                    neighbor = segments[idx + 1] if idx + 1 < len(segments) else ""
+                    candidate_windows.append(f"{segment}\n{neighbor}".strip())
+                if not candidate_windows:
+                    candidate_windows = segments
+
+            is_match = False
+            for candidate in candidate_windows:
+                compact_candidate = _compact_text(candidate)
+                if compact_candidate and all(term in compact_candidate for term in compact_terms):
+                    is_match = True
+                    break
+            if not is_match:
+                continue
+            matched_comments += 1
+            matched_song_keys.add(str(comment.get("song_key", "")).strip())
+
+        rows.append({
+            "rule_id": str(rule.get("rule_id", "")).strip() or "+".join(terms),
+            "terms": " + ".join(terms),
+            "window": window,
+            "semantic_category": str(rule.get("semantic_category", "")).strip(),
+            "meaning_label": str(rule.get("meaning_label", "")).strip(),
+            "semantic_weight": round(float(rule.get("semantic_weight", 0) or 0), 4),
+            "stance": str(rule.get("stance", "")).strip(),
+            "stance_score": round(float(rule.get("stance_score", 0) or 0), 4),
+            "confidence": round(float(rule.get("confidence", 0) or 0), 4),
+            "matched_comment_count": int(matched_comments),
+            "matched_song_count": int(len({key for key in matched_song_keys if key})),
+            "share_of_comments_pct": round(matched_comments / total_comments * 100, 2) if total_comments else 0,
+            "reason": str(rule.get("reason", "")).strip(),
+        })
+
+    df = pd.DataFrame(rows)
+    if df.empty:
+        return df
+    return df.sort_values(
+        ["matched_comment_count", "semantic_weight", "stance_score"],
+        ascending=[False, False, False],
+    ).reset_index(drop=True)
+
+
 def _save_figure(path: Path):
     path.parent.mkdir(parents=True, exist_ok=True)
     plt.tight_layout()
@@ -1160,6 +1423,7 @@ def build_summary_markdown(
     review_queue_df: pd.DataFrame,
     meaning_overall_df: pd.DataFrame,
     stance_overall_df: pd.DataFrame,
+    composite_rule_df: pd.DataFrame,
     figures: Dict[str, str],
 ) -> str:
     total_songs = int(len(song_summary_df))
@@ -1213,6 +1477,13 @@ def build_summary_markdown(
             "term", "evidence_count", "decision_source", "confidence", "reason"
         ]], 30),
         "",
+        "## 组合词构成及权重",
+        "",
+        _markdown_table(composite_rule_df[[
+            "terms", "window", "meaning_label", "semantic_weight", "stance", "stance_score",
+            "matched_comment_count", "matched_song_count", "share_of_comments_pct"
+        ]], 30) if composite_rule_df is not None and not composite_rule_df.empty else "暂无数据\n",
+        "",
         "## 图表",
         "",
     ]
@@ -1259,6 +1530,206 @@ def _write_json(path: Path, payload: object):
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
+def build_song_deep_cleaning_markdown(
+    generated_at: str,
+    song_name: str,
+    source_dir: Path,
+    raw_word_frequency_df: pd.DataFrame,
+    raw_tfidf_df: pd.DataFrame,
+    song_summary_df: pd.DataFrame,
+    clean_terms_df: pd.DataFrame,
+    excluded_terms_df: pd.DataFrame,
+    review_queue_df: pd.DataFrame,
+    meaning_overall_df: pd.DataFrame,
+    stance_overall_df: pd.DataFrame,
+    composite_rule_df: pd.DataFrame,
+    figures: Dict[str, str],
+) -> str:
+    song_row = song_summary_df.iloc[0] if not song_summary_df.empty else pd.Series(dtype=object)
+    comment_count = int(song_row.get("comment_count", 0) or 0)
+    political_count = int(song_row.get("political_comment_count", 0) or 0)
+    political_share = float(song_row.get("political_comment_share", 0) or 0)
+
+    lines = [
+        f"# {song_name} 深度清洗报告",
+        "",
+        "## 数据范围与说明",
+        "",
+        f"- 生成时间：{generated_at}",
+        f"- 原始歌曲目录：`{source_dir}`",
+        f"- 评论数：{comment_count}",
+        f"- 有效政治/历史评论数：{political_count} ({round(political_share * 100, 2)}%)",
+        "- 本报告基于该歌曲目录下既有匿名评论与分析文件重洗，不重新抓取 B 站。",
+        "- 原始词频与 TF-IDF 保留作对照，深度清洗后的词条、真正含义和立场占比作为新版研究结果。",
+        "",
+        "## 原始词频对照",
+        "",
+        _markdown_table(raw_word_frequency_df[["keyword", "frequency"]], 25) if not raw_word_frequency_df.empty else "暂无数据\n",
+        "",
+        "## 原始 TF-IDF 对照",
+        "",
+        _markdown_table(raw_tfidf_df[["keyword", "tfidf"]], 25) if not raw_tfidf_df.empty else "暂无数据\n",
+        "",
+        "## 深度清洗后保留词条",
+        "",
+        _markdown_table(clean_terms_df[[
+            "term", "semantic_category", "evidence_count", "weighted_frequency", "decision_source", "confidence"
+        ]], 30),
+        "",
+        "## 被排除词条",
+        "",
+        _markdown_table(excluded_terms_df[[
+            "term", "evidence_count", "decision_source", "confidence", "reason"
+        ]], 25),
+        "",
+        "## 待复核词条",
+        "",
+        _markdown_table(review_queue_df[[
+            "term", "evidence_count", "decision_source", "confidence", "reason"
+        ]], 25),
+        "",
+        "## 真正含义占比",
+        "",
+        _markdown_table(meaning_overall_df[[
+            "primary_meaning_category", "primary_meaning_label", "comment_count", "share_pct"
+        ]], 20),
+        "",
+        "## 立场占比",
+        "",
+        _markdown_table(stance_overall_df[["stance", "comment_count", "share_pct"]], 10),
+        "",
+        "## 组合词构成及权重",
+        "",
+        _markdown_table(composite_rule_df[[
+            "terms", "window", "meaning_label", "semantic_weight", "stance", "stance_score",
+            "matched_comment_count", "share_of_comments_pct"
+        ]], 20) if composite_rule_df is not None and not composite_rule_df.empty else "暂无数据\n",
+        "",
+        "## 单曲摘要",
+        "",
+        f"- Top 真正含义：{song_row.get('top_meanings', '暂无') or '暂无'}",
+        f"- Top 立场：{song_row.get('top_stances', '暂无') or '暂无'}",
+        "",
+        "## 图表",
+        "",
+    ]
+
+    titles = {
+        "overall_meanings": "真正含义 Top 12",
+        "overall_stances": "立场占比",
+        "song_stance_heatmap": "单曲立场热力图",
+        "song_meaning_heatmap": "单曲真正含义热力图",
+    }
+    for key, filename in figures.items():
+        lines.extend([
+            f"### {titles.get(key, key)}",
+            "",
+            f"![{titles.get(key, key)}](figures/{filename})",
+            "",
+        ])
+
+    lines.extend([
+        "## 数据文件",
+        "",
+        "- `data/comments_deep_cleaned_v2.csv`：合并单曲评论、真正含义与立场标签。",
+        "- `data/clean_terms_v2.csv`：深度清洗后保留词条。",
+        "- `data/excluded_terms_v2.csv`：被排除词条。",
+        "- `data/semantic_review_queue_v2.csv`：待复核词条。",
+        "- `data/meaning_labels_comments_v2.csv`：评论级真正含义标签。",
+        "- `data/meaning_distribution_overall_v2.csv`：单曲真正含义分布。",
+        "- `data/stance_labels_comments_v2.csv`：评论级立场标签。",
+        "- `data/stance_distribution_overall_v2.csv`：单曲立场分布。",
+        "- `data/composite_rule_summary_v2.csv`：命中的组合词规则摘要。",
+        "- `data/overall_summary_v2.json`：本次单曲重洗统计摘要。",
+        "",
+    ])
+    return "\n".join(lines)
+
+
+def write_song_deep_cleaning_reports(output_dir: Path, markdown_text: str) -> Dict[str, str]:
+    md_path = output_dir / "report.md"
+    html_path = output_dir / "report.html"
+    md_path.write_text(markdown_text, encoding="utf-8")
+    html_path.write_text(markdown_to_html(markdown_text, "单曲深度清洗报告"), encoding="utf-8")
+    return {"markdown": str(md_path), "html": str(html_path)}
+
+
+def _compute_deep_cleaning_outputs(
+    comments_df: pd.DataFrame,
+    bundle: Dict[str, pd.DataFrame],
+    enable_ai: bool = False,
+) -> Dict[str, object]:
+    manual_overrides = load_manual_lexicon_overrides()
+    effective_term_map = build_effective_term_map(manual_overrides["semantic"])
+    term_evidence_df = _build_term_evidence(bundle)
+    term_outputs = semantic_clean_terms(
+        term_evidence_df,
+        enable_ai=enable_ai,
+        manual_semantic=manual_overrides["semantic"],
+        effective_term_map=effective_term_map,
+    )
+    meaning_labels_df, ontology_delta = build_meaning_labels(
+        comments_df,
+        term_outputs["clean_terms"],
+        enable_ai=enable_ai,
+        effective_term_map=effective_term_map,
+    )
+    stance_source_df = comments_df.merge(
+        meaning_labels_df[[
+            "comment_id", "song_key", "song_name", "bvid", "is_political_historical", "primary_meaning_label",
+            "primary_meaning_category", "primary_meaning_score", "primary_matched_terms", "secondary_meaning_labels"
+        ]],
+        on=["comment_id", "song_key", "song_name", "bvid"],
+        how="left",
+    )
+    stance_df = build_stance_labels(
+        stance_source_df,
+        enable_ai=enable_ai,
+        manual_stance=manual_overrides["stance"],
+    )
+    meaning_overall_df, meaning_by_song_df = build_meaning_distribution(meaning_labels_df)
+    stance_overall_df, stance_by_song_df = build_stance_distribution(stance_df)
+    song_level_summary_df = build_song_level_summary(bundle["songs"], meaning_labels_df, stance_df)
+    composite_rule_df = build_composite_rule_summary(comments_df)
+    combined_comments_df = comments_df.merge(
+        meaning_labels_df.drop(columns=["content"], errors="ignore"),
+        on=["comment_id", "song_key", "song_name"],
+        how="left",
+    ).merge(
+        stance_df.drop(columns=["content"], errors="ignore"),
+        on=["comment_id", "song_key", "song_name", "primary_meaning_label"],
+        how="left",
+    )
+    overall_summary = {
+        "generated_at": datetime.now().isoformat(timespec="seconds"),
+        "song_count": int(len(bundle["songs"])),
+        "comment_count": int(len(comments_df)),
+        "political_comment_count": int(meaning_labels_df["is_political_historical"].sum()) if not meaning_labels_df.empty else 0,
+        "clean_term_count": int(len(term_outputs["clean_terms"])),
+        "excluded_term_count": int(len(term_outputs["excluded_terms"])),
+        "review_queue_count": int(len(term_outputs["review_queue"])),
+        "enable_ai": bool(enable_ai),
+        "top_meanings": meaning_overall_df.head(10).to_dict("records") if not meaning_overall_df.empty else [],
+        "stance_distribution": stance_overall_df.to_dict("records") if not stance_overall_df.empty else [],
+        "composite_rule_count": int(len(composite_rule_df)),
+    }
+    return {
+        "manual_overrides": manual_overrides,
+        "term_outputs": term_outputs,
+        "meaning_labels_df": meaning_labels_df,
+        "ontology_delta": ontology_delta,
+        "stance_df": stance_df,
+        "meaning_overall_df": meaning_overall_df,
+        "meaning_by_song_df": meaning_by_song_df,
+        "stance_overall_df": stance_overall_df,
+        "stance_by_song_df": stance_by_song_df,
+        "song_level_summary_df": song_level_summary_df,
+        "composite_rule_df": composite_rule_df,
+        "combined_comments_df": combined_comments_df,
+        "overall_summary": overall_summary,
+    }
+
+
 def create_summary_output_dir(base_root: Path) -> Path:
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     output_dir = base_root / f"summary_{timestamp}"
@@ -1285,46 +1756,20 @@ def run_deep_cleaning_summary(
     if comments_df.empty:
         raise RuntimeError("No song result bundles were found under result/")
 
-    manual_overrides = load_manual_lexicon_overrides()
-    effective_term_map = build_effective_term_map(manual_overrides["semantic"])
-    term_evidence_df = _build_term_evidence(bundle)
-    term_outputs = semantic_clean_terms(
-        term_evidence_df,
-        enable_ai=enable_ai,
-        manual_semantic=manual_overrides["semantic"],
-        effective_term_map=effective_term_map,
-    )
-    meaning_labels_df, ontology_delta = build_meaning_labels(
-        comments_df,
-        term_outputs["clean_terms"],
-        enable_ai=enable_ai,
-        effective_term_map=effective_term_map,
-    )
-    stance_df = build_stance_labels(
-        comments_df.merge(
-            meaning_labels_df[[
-                "comment_id", "song_key", "song_name", "bvid", "is_political_historical", "primary_meaning_label", "primary_meaning_category",
-                "primary_meaning_score", "primary_matched_terms", "secondary_meaning_labels"
-            ]],
-            on=["comment_id", "song_key", "song_name", "bvid"],
-            how="left",
-        ),
-        enable_ai=enable_ai,
-        manual_stance=manual_overrides["stance"],
-    )
-    meaning_overall_df, meaning_by_song_df = build_meaning_distribution(meaning_labels_df)
-    stance_overall_df, stance_by_song_df = build_stance_distribution(stance_df)
-    song_level_summary_df = build_song_level_summary(bundle["songs"], meaning_labels_df, stance_df)
-
-    combined_comments_df = comments_df.merge(
-        meaning_labels_df.drop(columns=["content"], errors="ignore"),
-        on=["comment_id", "song_key", "song_name"],
-        how="left",
-    ).merge(
-        stance_df.drop(columns=["content"], errors="ignore"),
-        on=["comment_id", "song_key", "song_name", "primary_meaning_label"],
-        how="left",
-    )
+    outputs = _compute_deep_cleaning_outputs(comments_df, bundle, enable_ai=enable_ai)
+    manual_overrides = outputs["manual_overrides"]
+    term_outputs = outputs["term_outputs"]
+    meaning_labels_df = outputs["meaning_labels_df"]
+    ontology_delta = outputs["ontology_delta"]
+    stance_df = outputs["stance_df"]
+    meaning_overall_df = outputs["meaning_overall_df"]
+    meaning_by_song_df = outputs["meaning_by_song_df"]
+    stance_overall_df = outputs["stance_overall_df"]
+    stance_by_song_df = outputs["stance_by_song_df"]
+    song_level_summary_df = outputs["song_level_summary_df"]
+    composite_rule_df = outputs["composite_rule_df"]
+    combined_comments_df = outputs["combined_comments_df"]
+    overall_summary = outputs["overall_summary"]
 
     data_dir = output_dir / "data"
     combined_comments_df.to_csv(data_dir / "combined_comments_cleaned.csv", index=False, encoding=CSV_ENCODING)
@@ -1340,6 +1785,7 @@ def run_deep_cleaning_summary(
     meaning_by_song_df.to_csv(data_dir / "meaning_distribution_by_song.csv", index=False, encoding=CSV_ENCODING)
     stance_overall_df.to_csv(data_dir / "stance_distribution_overall.csv", index=False, encoding=CSV_ENCODING)
     stance_by_song_df.to_csv(data_dir / "stance_distribution_by_song.csv", index=False, encoding=CSV_ENCODING)
+    composite_rule_df.to_csv(data_dir / "composite_rule_summary.csv", index=False, encoding=CSV_ENCODING)
 
     ontology_seed_payload = {
         "categories": SEMANTIC_ONTOLOGY_SEED,
@@ -1361,19 +1807,6 @@ def run_deep_cleaning_summary(
         source_doc = MANUAL_LEXICON_DIR / doc_name
         if source_doc.exists():
             shutil.copy2(source_doc, data_dir / f"manual_lexicon_{doc_name.lower()}")
-
-    overall_summary = {
-        "generated_at": datetime.now().isoformat(timespec="seconds"),
-        "song_count": int(len(bundle["songs"])),
-        "comment_count": int(len(comments_df)),
-        "political_comment_count": int(meaning_labels_df["is_political_historical"].sum()) if not meaning_labels_df.empty else 0,
-        "clean_term_count": int(len(term_outputs["clean_terms"])),
-        "excluded_term_count": int(len(term_outputs["excluded_terms"])),
-        "review_queue_count": int(len(term_outputs["review_queue"])),
-        "enable_ai": bool(enable_ai),
-        "top_meanings": meaning_overall_df.head(10).to_dict("records") if not meaning_overall_df.empty else [],
-        "stance_distribution": stance_overall_df.to_dict("records") if not stance_overall_df.empty else [],
-    }
     _write_json(data_dir / "overall_summary.json", overall_summary)
 
     figures = create_summary_figures(
@@ -1391,6 +1824,7 @@ def run_deep_cleaning_summary(
         review_queue_df=term_outputs["review_queue"],
         meaning_overall_df=meaning_overall_df,
         stance_overall_df=stance_overall_df,
+        composite_rule_df=composite_rule_df,
         figures=figures,
     )
     reports = write_summary_reports(output_dir, markdown)
@@ -1403,4 +1837,105 @@ def run_deep_cleaning_summary(
         "political_comment_count": int(overall_summary["political_comment_count"]),
         "clean_term_count": int(len(term_outputs["clean_terms"])),
         "stance_rows": int(len(stance_df)),
+        "composite_rule_rows": int(len(composite_rule_df)),
+    }
+
+
+def run_song_deep_cleaning(
+    song_dir: Path,
+    output_dir: Optional[Path] = None,
+    enable_ai: bool = False,
+) -> Dict[str, object]:
+    song_dir = Path(song_dir)
+    comments_df, bundle = load_song_result_bundle(song_dir)
+    if comments_df.empty:
+        raise RuntimeError(f"No usable song data found under {song_dir}")
+
+    output_dir = Path(output_dir) if output_dir else song_dir / "deep_cleaning_v2"
+    data_dir = output_dir / "data"
+    figures_dir = output_dir / "figures"
+    data_dir.mkdir(parents=True, exist_ok=True)
+    figures_dir.mkdir(parents=True, exist_ok=True)
+
+    outputs = _compute_deep_cleaning_outputs(comments_df, bundle, enable_ai=enable_ai)
+    term_outputs = outputs["term_outputs"]
+    meaning_labels_df = outputs["meaning_labels_df"]
+    stance_df = outputs["stance_df"]
+    meaning_overall_df = outputs["meaning_overall_df"]
+    meaning_by_song_df = outputs["meaning_by_song_df"]
+    stance_overall_df = outputs["stance_overall_df"]
+    stance_by_song_df = outputs["stance_by_song_df"]
+    song_level_summary_df = outputs["song_level_summary_df"]
+    composite_rule_df = outputs["composite_rule_df"]
+    combined_comments_df = outputs["combined_comments_df"]
+    overall_summary = outputs["overall_summary"]
+
+    combined_comments_df.to_csv(data_dir / "comments_deep_cleaned_v2.csv", index=False, encoding=CSV_ENCODING)
+    term_outputs["clean_terms"].to_csv(data_dir / "clean_terms_v2.csv", index=False, encoding=CSV_ENCODING)
+    term_outputs["excluded_terms"].to_csv(data_dir / "excluded_terms_v2.csv", index=False, encoding=CSV_ENCODING)
+    term_outputs["review_queue"].to_csv(data_dir / "semantic_review_queue_v2.csv", index=False, encoding=CSV_ENCODING)
+    meaning_labels_df.to_csv(data_dir / "meaning_labels_comments_v2.csv", index=False, encoding=CSV_ENCODING)
+    meaning_overall_df.to_csv(data_dir / "meaning_distribution_overall_v2.csv", index=False, encoding=CSV_ENCODING)
+    meaning_by_song_df.to_csv(data_dir / "meaning_distribution_by_song_v2.csv", index=False, encoding=CSV_ENCODING)
+    stance_df.to_csv(data_dir / "stance_labels_comments_v2.csv", index=False, encoding=CSV_ENCODING)
+    stance_overall_df.to_csv(data_dir / "stance_distribution_overall_v2.csv", index=False, encoding=CSV_ENCODING)
+    stance_by_song_df.to_csv(data_dir / "stance_distribution_by_song_v2.csv", index=False, encoding=CSV_ENCODING)
+    composite_rule_df.to_csv(data_dir / "composite_rule_summary_v2.csv", index=False, encoding=CSV_ENCODING)
+    song_level_summary_df.to_csv(data_dir / "song_level_summary_v2.csv", index=False, encoding=CSV_ENCODING)
+    _write_json(data_dir / "overall_summary_v2.json", overall_summary)
+    _write_json(data_dir / "ontology_delta_v2.json", outputs["ontology_delta"])
+
+    figures = create_summary_figures(
+        output_dir,
+        meaning_overall_df,
+        stance_overall_df,
+        meaning_by_song_df,
+        stance_by_song_df,
+    )
+    raw_word_frequency_df = bundle.get("word_frequency", pd.DataFrame())
+    raw_tfidf_df = bundle.get("tfidf", pd.DataFrame())
+    song_name = str(song_level_summary_df.iloc[0]["song_name"]) if not song_level_summary_df.empty else song_dir.name
+    markdown = build_song_deep_cleaning_markdown(
+        generated_at=overall_summary["generated_at"],
+        song_name=song_name,
+        source_dir=song_dir,
+        raw_word_frequency_df=raw_word_frequency_df,
+        raw_tfidf_df=raw_tfidf_df,
+        song_summary_df=song_level_summary_df,
+        clean_terms_df=term_outputs["clean_terms"],
+        excluded_terms_df=term_outputs["excluded_terms"],
+        review_queue_df=term_outputs["review_queue"],
+        meaning_overall_df=meaning_overall_df,
+        stance_overall_df=stance_overall_df,
+        composite_rule_df=composite_rule_df,
+        figures=figures,
+    )
+    reports = write_song_deep_cleaning_reports(output_dir, markdown)
+
+    return {
+        "song_dir": str(song_dir),
+        "output_dir": str(output_dir),
+        "reports": reports,
+        "comment_count": int(len(comments_df)),
+        "political_comment_count": int(overall_summary["political_comment_count"]),
+        "clean_term_count": int(len(term_outputs["clean_terms"])),
+    }
+
+
+def run_deep_cleaning_backfill(
+    result_root: Path,
+    enable_ai: bool = False,
+) -> Dict[str, object]:
+    result_root = Path(result_root)
+    if not result_root.exists():
+        raise FileNotFoundError(f"Result root not found: {result_root}")
+
+    song_dirs = _iter_song_dirs(result_root)
+    results = []
+    for song_dir in song_dirs:
+        results.append(run_song_deep_cleaning(song_dir, enable_ai=enable_ai))
+    return {
+        "result_root": str(result_root),
+        "song_count": len(results),
+        "songs": results,
     }
